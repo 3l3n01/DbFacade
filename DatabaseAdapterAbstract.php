@@ -1,9 +1,9 @@
 <?php
-namespace DbAdapters;
+namespace tomkyle\DbAdapters;
 
-use \DbAdapters\DatabaseAdapterInterface;
-use \DbAdapters\AdoDbAdapter;
-use \DbAdapters\PdoAdapter;
+use \tomkyle\DbAdapters\DatabaseAdapterInterface;
+use \tomkyle\DbAdapters\AdoDbAdapter;
+use \tomkyle\DbAdapters\PdoAdapter;
 
 use \UnexpectedValueException;
 use \InvalidArgumentException;

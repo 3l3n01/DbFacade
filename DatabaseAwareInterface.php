@@ -1,7 +1,7 @@
 <?php
-namespace DbAdapters;
+namespace tomkyle\DbAdapters;
 
-use \DbAdapters\DatabaseAdapterInterface;
+use \tomkyle\DbAdapters\DatabaseAdapterInterface;
 
 
 /**

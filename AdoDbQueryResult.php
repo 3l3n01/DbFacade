@@ -1,8 +1,8 @@
 <?php
-namespace DbAdapters;
+namespace tomkyle\DbAdapters;
 
-use \DbAdapters\QueryResultInterface;
-use \DbAdapters\QueryResultAbstract;
+use \tomkyle\DbAdapters\QueryResultInterface;
+use \tomkyle\DbAdapters\QueryResultAbstract;
 
 use \InvalidArgumentException;
 
