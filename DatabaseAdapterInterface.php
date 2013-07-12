@@ -1,5 +1,5 @@
 <?php
-namespace tomkyle\DbAdapters;
+namespace DbAdapters;
 
 
 /**

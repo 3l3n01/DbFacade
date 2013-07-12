@@ -1,13 +1,13 @@
 <?php
-namespace tomkyle\DbAdapters;
+namespace DbAdapters;
 
-use \tomkyle\DbAdapters\DatabaseAdapterInterface;
-use \tomkyle\DbAdapters\DatabaseAdapterAbstract;
+use \DbAdapters\DatabaseAdapterInterface;
+use \DbAdapters\DatabaseAdapterAbstract;
 
 use \Exception;
 use \ADOConnection;
 
-use \tomkyle\DbAdapters\AdoDbQueryResult;
+use \DbAdapters\AdoDbQueryResult;
 
 
 /**

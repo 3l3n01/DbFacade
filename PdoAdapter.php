@@ -1,12 +1,12 @@
 <?php
-namespace tomkyle\DbAdapters;
+namespace DbAdapters;
 
-use \tomkyle\DbAdapters\DatabaseAdapterInterface;
-use \tomkyle\DbAdapters\DatabaseAdapterAbstract;
+use \DbAdapters\DatabaseAdapterInterface;
+use \DbAdapters\DatabaseAdapterAbstract;
 
 use \Exception;
 use \PDO;
-use \tomkyle\DbAdapters\PdoQueryResult;
+use \DbAdapters\PdoQueryResult;
 
 
 
