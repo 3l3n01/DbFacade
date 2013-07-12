@@ -1,9 +1,9 @@
 <?php
-namespace NewFreetag\Databases;
+namespace DbAdapters;
 
-use \NewFreetag\Databases\DatabaseAdapterInterface;
-use \NewFreetag\Databases\AdoDbAdapter;
-use \NewFreetag\Databases\PdoAdapter;
+use \DbAdapters\DatabaseAdapterInterface;
+use \DbAdapters\AdoDbAdapter;
+use \DbAdapters\PdoAdapter;
 
 use \UnexpectedValueException;
 use \InvalidArgumentException;

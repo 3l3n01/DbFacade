@@ -1,8 +1,8 @@
 <?php
-namespace NewFreetag\Databases;
+namespace DbAdapters;
 
-use \NewFreetag\Databases\QueryResultInterface;
-use \NewFreetag\Databases\QueryResultAbstract;
+use \DbAdapters\QueryResultInterface;
+use \DbAdapters\QueryResultAbstract;
 
 use \InvalidArgumentException;
 

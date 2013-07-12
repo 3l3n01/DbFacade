@@ -1,7 +1,7 @@
 <?php
-namespace NewFreetag\Databases;
+namespace DbAdapters;
 
-use \NewFreetag\Databases\QueryResultInterface;
+use \DbAdapters\QueryResultInterface;
 
 
 

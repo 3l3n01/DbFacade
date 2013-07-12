@@ -1,13 +1,13 @@
 <?php
-namespace NewFreetag\Databases;
+namespace DbAdapters;
 
-use \NewFreetag\Databases\DatabaseAdapterInterface;
-use \NewFreetag\Databases\DatabaseAdapterAbstract;
+use \DbAdapters\DatabaseAdapterInterface;
+use \DbAdapters\DatabaseAdapterAbstract;
 
 use \Exception;
 use \ADOConnection;
 
-use \NewFreetag\Databases\AdoDbQueryResult;
+use \DbAdapters\AdoDbQueryResult;
 
 
 /**

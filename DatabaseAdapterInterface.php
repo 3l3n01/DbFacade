@@ -1,5 +1,5 @@
 <?php
-namespace NewFreetag\Databases;
+namespace DbAdapters;
 
 
 /**

@@ -1,7 +1,7 @@
 <?php
-namespace NewFreetag\Databases;
+namespace DbAdapters;
 
-use \NewFreetag\Databases\DatabaseAdapterInterface;
+use \DbAdapters\DatabaseAdapterInterface;
 
 
 /**
