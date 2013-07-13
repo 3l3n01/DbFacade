@@ -27,8 +27,8 @@ id,
 word
 FROM sample_words
 WHERE 1
-LIMIT 25';
-$words = $adapter->query("SELECT word FROM sample_words WHERE 1 LIMIT 0,3");
+LIMIT 4';
+
 foreach($words as $w) {
     print_r($w);
 }
