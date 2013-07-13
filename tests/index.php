@@ -1,5 +1,7 @@
 <?php
 namespace DbAdapters\Tests;
+
+require_once 'config.php';
 ?>
 <!doctype html>
 <html lang="en">
@@ -9,15 +11,29 @@ namespace DbAdapters\Tests;
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 </head>
 <body>
+
 <h1>DbAdapters Test</h1>
+
+
 <?php
 foreach($adapters as $adapter):
-    echo "<h3>", get_class($adapter), "</h3>\n";
+echo "<h2>", get_class($adapter), "</h2>\n";
 
+echo "<pre>";
 try {  // ================= Testing area ====================
 
-$sql = "SELECT word FROM sample_words WHERE 1 LIMIT 0,3";
-$words = $adapter->query("SELECT word FROM sample_words WHERE 1 LIMIT 0,3")->getRows();
+$sql = 'SELECT
+id,
+word
+FROM sample_words
+WHERE 1
+LIMIT 25';
+$words = $adapter->query("SELECT word FROM sample_words WHERE 1 LIMIT 0,3");
+foreach($words as $w) {
+    print_r($w);
+}
+#print_r($words);
+echo "</pre>";
 echo "<hr>";
 
 ?>

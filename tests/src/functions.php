@@ -5,7 +5,7 @@
  * All functions defined here are namespaced <code>NewFreetag\Testing</code>.
  */
 
-namespace NewFreetag\Tests;
+namespace DbAdapters\Tests;
 
 use \RuntimeException;
 
