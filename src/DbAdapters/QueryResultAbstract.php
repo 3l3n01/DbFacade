@@ -82,7 +82,7 @@ implements QueryResultInterface, \Countable
     public function field($field) {
         return ($this->count()
         and is_object($current = $this->current()))
-        ? $current()->$field : null;
+        ? $current->$field : null;
     }
 
 
