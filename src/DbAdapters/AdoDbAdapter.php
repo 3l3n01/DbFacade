@@ -20,11 +20,6 @@ implements DatabaseAdapterInterface
 {
 
 
-/**
- * Stores the original ADOConnection FetchMode to make it restorable
- * after using in this context.
- */
-    public $fetch_mode_backup = 0;
 
 
 
@@ -42,7 +37,12 @@ implements DatabaseAdapterInterface
     public function __construct( \ADOConnection $ado )
     {
         $this->connection = $ado;
+        $this->storeFetchMode();
+    }
 
+
+
+    public function storeFetchMode() {
         $this->fetch_mode_backup = (int) $this->connection->fetchMode;
         $this->connection->SetFetchMode(\ADODB_FETCH_ASSOC);
     }
@@ -59,6 +59,7 @@ implements DatabaseAdapterInterface
         $this->connection->SetFetchMode($this->fetch_mode_backup);
         return $this;
     }
+
 
 
 /**

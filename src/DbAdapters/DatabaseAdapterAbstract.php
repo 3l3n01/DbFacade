@@ -77,6 +77,13 @@ implements DatabaseAdapterInterface
     protected $result;
 
 
+/**
+ * Stores the original FetchMode to make it restorable
+ * after using in this context.
+ * @var mixed
+ */
+    public $fetch_mode_backup = 0;
+
 
 //  ============  Implemenet Interface DatabaseAdapterInterface  =============
 
@@ -148,6 +155,8 @@ implements DatabaseAdapterInterface
     abstract public function getErrorMsg( );
 
 
+
+    abstract public function storeFetchMode();
 
 
 //  ============  Helpers  ========================
