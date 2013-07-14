@@ -196,7 +196,7 @@ implements DatabaseAdapterInterface
     public function storeFetchMode() {
         $this->fetch_mode_backup = (int) $this->connection->fetchMode;
         $this->connection->SetFetchMode(\ADODB_FETCH_ASSOC);
-        return $this
+        return $this;
     }
 
 
