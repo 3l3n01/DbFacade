@@ -173,6 +173,8 @@ implements DatabaseAdapterInterface
         return $this->connection->ErrorMsg();
     }
 
+
+
 //  ========  Helpers  =========================
 
 
