@@ -3,11 +3,10 @@ namespace DbAdapters;
 
 use \DbAdapters\DatabaseAdapterInterface;
 use \DbAdapters\DatabaseAdapterAbstract;
+use \DbAdapters\PdoQueryResult;
 
 use \Exception;
 use \PDO;
-use \DbAdapters\PdoQueryResult;
-
 
 
 /**
@@ -21,14 +20,17 @@ implements DatabaseAdapterInterface
 
 
 /**
- * Stores the original ADOConnection FetchMode to make it restorable
+ * Stores the original PDO fetch mode to make it restorable
  * after using in this context.
+ *
+ * The restauration will not be done automatically;
+ * simply call restoreFetchMode() whenever you need it.
  */
     public $fetch_mode_backup = 0;
 
 
 /**
- * @param PDO $pdo PDO Connection
+ * @param \PDO $pdo PDO Connection
  * @uses  $connection
  */
     public function __construct( \PDO $pdo )
@@ -37,35 +39,6 @@ implements DatabaseAdapterInterface
         $this->storeFetchMode();
     }
 
-
-/**
- * Since db result are SdtClass objects, we need a fetch mode that retrieves objects
- * rather than associative or numeric arrays. This method stores the  "fetch mode"
- * for later restoration.
- *
- * @return object Fluent Interface
- * @uses   $connection
- * @uses   ADO::getAttribute()
- */
-    public function storeFetchMode() {
-        $this->fetch_mode_backup = $this->connection->getAttribute(\PDO::ATTR_DEFAULT_FETCH_MODE);
-        $this->connection->setAttribute(\PDO::ATTR_DEFAULT_FETCH_MODE, \PDO::FETCH_OBJ);
-        return $this;
-    }
-
-
-/**
- * Applies the previously backupped fetch mode.
- *
- * @return object Fluent Interface
- * @uses   $connection
- * @uses   $fetch_mode_backup
- * @uses   ADO::setAttribute()
- */
-    public function restoreFetchMode() {
-        $this->connection->setAttribute(\PDO::ATTR_DEFAULT_FETCH_MODE, $this->fetch_mode_backup);
-        return $this;
-    }
 
 
 
@@ -211,6 +184,40 @@ implements DatabaseAdapterInterface
     }
 
 
+//  ==============  Helpers  =======================
+
+
+/**
+ * Since db result are SdtClass objects, we need a fetch mode that retrieves objects
+ * rather than associative or numeric arrays. This method stores the  "fetch mode"
+ * for later restoration.
+ *
+ * The restauration will not be done automatically;
+ * simply call restoreFetchMode() whenever you need it.
+ *
+ * @return object Fluent Interface
+ * @uses   $connection
+ * @uses   ADO::getAttribute()
+ */
+    public function storeFetchMode() {
+        $this->fetch_mode_backup = $this->connection->getAttribute(\PDO::ATTR_DEFAULT_FETCH_MODE);
+        $this->connection->setAttribute(\PDO::ATTR_DEFAULT_FETCH_MODE, \PDO::FETCH_OBJ);
+        return $this;
+    }
+
+
+/**
+ * Applies the previously backupped fetch mode.
+ *
+ * @return object Fluent Interface
+ * @uses   $connection
+ * @uses   $fetch_mode_backup
+ * @uses   ADO::setAttribute()
+ */
+    public function restoreFetchMode() {
+        $this->connection->setAttribute(\PDO::ATTR_DEFAULT_FETCH_MODE, $this->fetch_mode_backup);
+        return $this;
+    }
 
 
 

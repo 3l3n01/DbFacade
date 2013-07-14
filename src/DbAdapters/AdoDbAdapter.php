@@ -21,6 +21,15 @@ implements DatabaseAdapterInterface
 
 
 
+/**
+ * Stores the original ADOConnection FetchMode to make it restorable
+ * after using in this context.
+ *
+ * The restauration will not be done automatically;
+ * simply call restoreFetchMode() whenever you need it.
+ */
+    public $fetch_mode_backup = 0;
+
 
 
 /**
@@ -38,38 +47,6 @@ implements DatabaseAdapterInterface
     {
         $this->connection = $ado;
         $this->storeFetchMode();
-    }
-
-
-/**
- * Since db results are SdtClass objects, we need a fetch mode that retrieves objects
- * rather than associative or numeric arrays. This method stores the  "fetch mode"
- * for later restoration.
- *
- * @return object Fluent Interface
- * @uses   $connection
- * @uses   $fetch_mode_backup
- * @uses   ADOConnection::$fetchMode
- * @uses   ADOConnection::SetFetchMode()
- */
-    public function storeFetchMode() {
-        $this->fetch_mode_backup = (int) $this->connection->fetchMode;
-        $this->connection->SetFetchMode(\ADODB_FETCH_ASSOC);
-        return $this
-    }
-
-
-/**
- * Applies the previously backupped fetch mode.
- *
- * @return object Fluent Interface
- * @uses   $connection
- * @uses   $fetch_mode_backup
- * @uses   ADOConnection::SetFetchMode()
- */
-    public function restoreFetchMode() {
-        $this->connection->SetFetchMode($this->fetch_mode_backup);
-        return $this;
     }
 
 
@@ -196,6 +173,43 @@ implements DatabaseAdapterInterface
         return $this->connection->ErrorMsg();
     }
 
+//  ========  Helpers  =========================
+
+
+
+/**
+ * Since db results are SdtClass objects, we need a fetch mode that retrieves objects
+ * rather than associative or numeric arrays. This method stores the  "fetch mode"
+ * for later restoration.
+ *
+ * The restauration will not be done automatically;
+ * simply call restoreFetchMode() whenever you need it.
+ *
+ * @return object Fluent Interface
+ * @uses   $connection
+ * @uses   $fetch_mode_backup
+ * @uses   ADOConnection::$fetchMode
+ * @uses   ADOConnection::SetFetchMode()
+ */
+    public function storeFetchMode() {
+        $this->fetch_mode_backup = (int) $this->connection->fetchMode;
+        $this->connection->SetFetchMode(\ADODB_FETCH_ASSOC);
+        return $this
+    }
+
+
+/**
+ * Applies the previously backupped fetch mode.
+ *
+ * @return object Fluent Interface
+ * @uses   $connection
+ * @uses   $fetch_mode_backup
+ * @uses   ADOConnection::SetFetchMode()
+ */
+    public function restoreFetchMode() {
+        $this->connection->SetFetchMode($this->fetch_mode_backup);
+        return $this;
+    }
 
 
 
