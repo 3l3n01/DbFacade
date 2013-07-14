@@ -37,10 +37,37 @@ implements DatabaseAdapterInterface
         $this->storeFetchMode();
     }
 
+
+/**
+ * Since db result are SdtClass objects, we need a fetch mode that retrieves objects
+ * rather than associative or numeric arrays. This method stores the  "fetch mode"
+ * for later restoration.
+ *
+ * @return object Fluent Interface
+ * @uses   $connection
+ * @uses   ADO::getAttribute()
+ */
     public function storeFetchMode() {
-        $this->fetch_mode_backup = $this->connection->getAttribute(PDO::ATTR_DEFAULT_FETCH_MODE);
-        $this->connection->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
+        $this->fetch_mode_backup = $this->connection->getAttribute(\PDO::ATTR_DEFAULT_FETCH_MODE);
+        $this->connection->setAttribute(\PDO::ATTR_DEFAULT_FETCH_MODE, \PDO::FETCH_OBJ);
+        return $this;
     }
+
+
+/**
+ * Applies the previously backupped fetch mode.
+ *
+ * @return object Fluent Interface
+ * @uses   $connection
+ * @uses   $fetch_mode_backup
+ * @uses   ADO::setAttribute()
+ */
+    public function restoreFetchMode() {
+        $this->connection->setAttribute(\PDO::ATTR_DEFAULT_FETCH_MODE, $this->fetch_mode_backup);
+        return $this;
+    }
+
+
 
 
 
