@@ -19,8 +19,6 @@ interface DatabaseAdapterInterface
     public function quote( $str );
 
 
-
-
 /**
  * Executes the given SQL string.
  *
@@ -31,18 +29,10 @@ interface DatabaseAdapterInterface
 
 
 /**
- * @return QueryResultInterface
- */
-    public function getResult();
-
-
-
-/**
  * Returns the number of affected rows.
  * @return int
  */
     public function affectedRows();
-
 
 
 /**
@@ -50,7 +40,6 @@ interface DatabaseAdapterInterface
  * @return int
  */
     public function getInsertId();
-
 
 
 /**
