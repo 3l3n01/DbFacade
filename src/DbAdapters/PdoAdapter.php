@@ -19,24 +19,25 @@ implements DatabaseAdapterInterface
 {
 
 
+
 /**
- * Stores the original PDO fetch mode to make it restorable
- * after using in this context.
+ * Stores the original configuration as far as it is changed
+ * by the adapter concretion.
  *
  * The restauration will not be done automatically;
- * simply call restoreFetchMode() whenever you need it.
+ * simply call restoreAttributes() whenever you need it.
  */
-    public $fetch_mode_backup = 0;
+    public $pdo_configuration_backup = array();
 
 
 /**
  * @param \PDO $pdo PDO Connection
- * @uses  backupFetchMode()
+ * @uses  backupConfiguration()
  */
     public function __construct( \PDO $pdo )
     {
         $this->connection = $pdo;
-        $this->backupFetchMode();
+        $this->backupConfiguration();
     }
 
 
@@ -94,6 +95,7 @@ implements DatabaseAdapterInterface
 
 /**
  * Returns the number of affected rows.
+ *
  * @return int
  * @uses   getResult()
  * @use    PdoQueryResult::affectedRows()
@@ -105,6 +107,7 @@ implements DatabaseAdapterInterface
 
 /**
  * Returns the ID of the last inserted object.
+ *
  * @return int
  * @uses   $connection
  * @uses   \PDO::lastInsertId()
@@ -133,34 +136,41 @@ implements DatabaseAdapterInterface
 
 
 /**
- * Since db result are SdtClass objects, we need a fetch mode that retrieves objects
- * rather than associative or numeric arrays. This method stores the  "fetch mode"
- * for later restoration.
+ * Creates a backup from the current PDO configuration.
  *
  * The restauration will not be done automatically;
- * simply call restoreFetchMode() whenever you need it.
+ * simply call restoreAttributes() whenever you need it.
  *
  * @return object Fluent Interface
  * @uses   $connection
- * @uses   ADO::getAttribute()
+ * @uses   $pdo_configuration_backup
+ * @uses   PDO::getAttribute()
+ * @uses   PDO::setAttribute()
  */
-    public function backupFetchMode() {
-        $this->fetch_mode_backup = $this->connection->getAttribute(\PDO::ATTR_DEFAULT_FETCH_MODE);
+    public function backupConfiguration() {
+        $this->pdo_configuration_backup = array(
+            \PDO::ATTR_DEFAULT_FETCH_MODE = this->connection->getAttribute(\PDO::ATTR_DEFAULT_FETCH_MODE),
+            \PDO::ATTR_ERRMODE            = this->connection->getAttribute(\PDO::ATTR_ERRMODE),
+        );
+
         $this->connection->setAttribute(\PDO::ATTR_DEFAULT_FETCH_MODE, \PDO::FETCH_OBJ);
+        $this->connection->setAttribute(\PDO::ATTR_ERRMODE,            \PDO::ERRMODE_EXCEPTION);
         return $this;
     }
 
 
 /**
- * Applies the previously backupped fetch mode.
+ * Applies the former PDO configuration from the backup taken before.
  *
  * @return object Fluent Interface
  * @uses   $connection
- * @uses   $fetch_mode_backup
- * @uses   ADO::setAttribute()
+ * @uses   $pdo_configuration_backup
+ * @uses   PDO::setAttribute()
  */
-    public function restoreFetchMode() {
-        $this->connection->setAttribute(\PDO::ATTR_DEFAULT_FETCH_MODE, $this->fetch_mode_backup);
+    public function restoreConfiguration() {
+        foreach( $this->pdo_configuration_backup as $conf => $value) {
+            $this->connection->setAttribute($conf, $value);
+        }
         return $this;
     }
 

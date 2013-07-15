@@ -18,9 +18,11 @@ implements QueryResultInterface
 
 
 /**
- * @param \PDOStatement $pdo_rs
- * @uses  QueryResultAbstract::__construct()
- * @throws InvalidArgumentException
+ * Accepts a PDOStatement instance.
+ *
+ * @param  \PDOStatement $pdo_rs
+ * @uses   QueryResultAbstract::__construct()
+ * @throws \InvalidArgumentException
  */
     public function __construct($pdo_rs)
     {
@@ -33,19 +35,23 @@ implements QueryResultInterface
     }
 
 
-
-//  =======  Implement interface QueryResultInterface  ===========
+//  =======  Additional stuff  ===========
 
 
 /**
  * Returns the number of affected rows.
+ *
+ * This method is mainly needed by PdoAdapter::affectedRows()
+ * since PDO itself doen not provide a method to return
+ * the number of affected rows.
+ *
  * @return int
- * @uses   $result
+ * @uses   getDriverResult()
+ * @uses   PDOStatement::rowCount()
  */
     public function affectedRows() {
-        return $this->result->rowCount();
+        return $this->getDriverResult()->rowCount();
     }
-
 
 
 }

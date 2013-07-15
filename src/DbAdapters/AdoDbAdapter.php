@@ -26,23 +26,23 @@ implements DatabaseAdapterInterface
  * after using in this context.
  *
  * The restauration will not be done automatically;
- * simply call restoreFetchMode() whenever you need it.
+ * simply call restoreAttributes() whenever you need it.
  */
-    public $fetch_mode_backup = 0;
+    public $ado_fetch_mode_backup = 0;
 
 
 /**
  * Since we'll work with assiciative result sets,
  * the methods creates a backup from the current/previous ADOdb FetchMode.
- * It can be restored with restoreFetchMode().
+ * It can be restored with restoreAttributes().
  *
  * @param \ADOConnection $ado ADODB Connection
- * @uses  backupFetchMode()
+ * @uses  backupConfiguration()
  */
     public function __construct( \ADOConnection $ado )
     {
         $this->connection = $ado;
-        $this->backupFetchMode();
+        $this->backupConfiguration();
     }
 
 
@@ -138,36 +138,34 @@ implements DatabaseAdapterInterface
 
 
 /**
- * Since db results are SdtClass objects, we need a fetch mode that retrieves objects
- * rather than associative or numeric arrays. This method stores the  "fetch mode"
- * for later restoration.
+ * Creates a backup from the current ADOConnection configuration.
  *
  * The restauration will not be done automatically;
- * simply call restoreFetchMode() whenever you need it.
+ * simply call restoreAttributes() whenever you need it.
  *
  * @return object Fluent Interface
  * @uses   $connection
- * @uses   $fetch_mode_backup
+ * @uses   $ado_fetch_mode_backup
  * @uses   ADOConnection::$fetchMode
  * @uses   ADOConnection::SetFetchMode()
  */
-    public function backupFetchMode() {
-        $this->fetch_mode_backup = (int) $this->connection->fetchMode;
+    public function backupConfiguration() {
+        $this->ado_fetch_mode_backup = (int) $this->connection->fetchMode;
         $this->connection->SetFetchMode(\ADODB_FETCH_ASSOC);
         return $this;
     }
 
 
 /**
- * Applies the previously backupped fetch mode.
+ * Applies the former ADOConnection configuration from the backup taken before.
  *
  * @return object Fluent Interface
  * @uses   $connection
- * @uses   $fetch_mode_backup
+ * @uses   $ado_fetch_mode_backup
  * @uses   ADOConnection::SetFetchMode()
  */
-    public function restoreFetchMode() {
-        $this->connection->SetFetchMode($this->fetch_mode_backup);
+    public function restoreConfiguration() {
+        $this->connection->SetFetchMode($this->ado_fetch_mode_backup);
         return $this;
     }
 

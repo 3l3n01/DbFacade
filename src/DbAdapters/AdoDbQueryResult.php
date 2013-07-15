@@ -7,7 +7,6 @@ use \DbAdapters\QueryResultAbstract;
 use \InvalidArgumentException;
 
 
-
 /**
  * ADOdb query result wrapper for ADORecordSet objects.
  *
@@ -18,11 +17,12 @@ implements QueryResultInterface
 {
 
 
-
 /**
- * @param  ADORecordSet|ADORecordSet_empty $ado_rs
+ * Accepts a ADORecordSet or ADORecordSet_empty instance.
+ *
+ * @param  \ADORecordSet|\ADORecordSet_empty $ado_rs
  * @uses   QueryResultAbstract::__construct()
- * @throws InvalidArgumentException
+ * @throws \InvalidArgumentException
  */
     public function __construct($ado_rs)
     {
@@ -35,7 +35,6 @@ implements QueryResultInterface
                 "ADORecordSet or ADORecordSet_empty expected.");
         }
     }
-
 
 
 }

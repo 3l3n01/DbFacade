@@ -31,4 +31,19 @@ interface QueryResultInterface
     public function getRows();
 
 
+/*
+ * Stores the original query result from the database connection used.
+ *
+ * @param  mixed $result
+ * @return object Fluent Interface
+ */
+    public function setDriverResult( $result );
+
+
+/**
+ * Returns the original query result from the database connection used.
+ *
+ * @return mixed
+ */
+    public function getDriverResult( );
 }

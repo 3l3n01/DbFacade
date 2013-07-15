@@ -36,6 +36,9 @@ implements DatabaseAdapterInterface
     protected $result;
 
 
+
+
+
 /**
  * factory
  *
@@ -165,17 +168,17 @@ implements DatabaseAdapterInterface
 
 
 /**
- * Stores the current fetch mode.
+ * Creates a backup from the current driver configuration.
  * @return object Fluent Interface
  */
-    abstract public function backupFetchMode();
+    abstract public function backupConfiguration();
 
 
 /**
- * Restores the current fetch mode.
+ * Applies the former driver configuration from the backup taken before.
  * @return object Fluent Interface
  */
-    abstract public function restoreFetchMode();
+    abstract public function restoreConfiguration();
 
 
 

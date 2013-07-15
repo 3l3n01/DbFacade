@@ -25,19 +25,28 @@ implements QueryResultInterface, \Countable
 {
 
 /**
- * @var mixed Database query result
+ * @var mixed Database driver query result
  */
     public $result;
 
 
 
 /**
+ * Accepts the database drivers last query result
+ * and configures the SqlQueue as follows:
+ *
+ * 1. Fill SqlQueue with result rows
+ * 2. Switch iterator mode to \SplDoublyLinkedList::IT_MODE_DELETE.
+ *
  * @param mixed Database query result
- * @uses  $result
+ * @uses  setDriverResult()
+ * @uses  populate()
+ * @uses  \SplQueue::setIteratorMode()
+ * @uses  \SplDoublyLinkedList::IT_MODE_DELETE
  */
     public function __construct($result) {
-        $this->result = $result;
-        $this->populate($result);
+        $this->setDriverResult( $result );
+        $this->populate( $result );
         $this->setIteratorMode(\SplDoublyLinkedList::IT_MODE_DELETE);
     }
 
@@ -54,6 +63,15 @@ implements QueryResultInterface, \Countable
     }
 
 
+/**
+ * Interpretes access to unknown members as fields of the the current result row
+ *
+ * @uses  field()
+ */
+    public function __get($field)
+    {
+        return $this->field($field);
+    }
 
 
 
@@ -98,19 +116,13 @@ implements QueryResultInterface, \Countable
     }
 
 
-
-
-//  =======  Helpers  ===========
-
-
-
 /**
- * Returns the original query result from the database conenction used.
+ * Returns the original query result from the database connection used.
  *
+ * @return mixed
  * @uses   $result
- * @return QueryResultAbstract
  */
-    public function getResult()
+    public function getDriverResult()
     {
         return $this->result;
     }
@@ -123,13 +135,14 @@ implements QueryResultInterface, \Countable
  * @return object Fluent Interface
  * @uses   $result
  */
-    public function setResult( $result )
+    public function setDriverResult( $result )
     {
         $this->result = $result;
         return $this;
     }
 
 
+//  =========  Helpers  =======================
 
 
 /**

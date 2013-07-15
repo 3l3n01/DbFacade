@@ -91,13 +91,13 @@ interface DatabaseAdapterInterface
  * Stores the current fetch mode.
  * @return object Fluent Interface
  */
-    public function backupFetchMode();
+    public function backupConfiguration();
 
 
 /**
  * Restores the current fetch mode.
  * @return object Fluent Interface
  */
-    public function restoreFetchMode();
+    public function restoreConfiguration();
 
 }
