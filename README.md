@@ -1,8 +1,8 @@
 #tomkyle/DbAdapters
 DbAdapters gives you what you are interested in most when talking to databases:
 
-- When you SELECT something, you are interested in the records.  
-– After INSERTING, the new ID is the most important.  
+- When you SELECT something, you are interested in the records.
+- After INSERTING, the new ID is the most important.
 - When UPDATEing or DELETEing, its the number of affected rows that you are after.
 
 DbAdapters aims a simple method API for creating, reading, updating and deleting. Each CRUD method returns the most important thing.
