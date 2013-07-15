@@ -43,22 +43,7 @@ implements DatabaseAdapterInterface
 //  ======  CRUD  =======================
 
 
-/**
- * @param  string $sql
- * @param  array  $context
- * @return int
- * @uses   PdoQueryResult::affectedRows()
- */
-    public function update($sql, $context = array())
-    {
-        return $this->execute($sql, $context)->affectedRows();
-    }
 
-
-    public function delete($sql, $context = array())
-    {
-        return $this->execute($sql, $context)->affectedRows();
-    }
 
 
 //  ========  Implement Interface DatabaseConnectionInterface  =======
