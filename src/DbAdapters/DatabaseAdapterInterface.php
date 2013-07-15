@@ -16,7 +16,7 @@ interface DatabaseAdapterInterface
  * Returns the last insert ID
  * @return int
  */
-    public function create();
+    public function create($sql, $context = array());
 
 
 /**
@@ -25,21 +25,21 @@ interface DatabaseAdapterInterface
  *
  * @return QueryResultAbstract
  */
-    public function read();
+    public function read($sql, $context = array());
 
 
 /**
  * Returns the number of affected rows.
  * @return int
  */
-    public function update();
+    public function update($sql, $context = array());
 
 
 /**
  * Returns the number of affected rows.
  * @return int
  */
-    public function delete();
+    public function delete($sql, $context = array());
 
 
 //  ======  Typical DB methods  =========
