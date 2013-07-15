@@ -12,6 +12,8 @@ use \DbAdapters\QueryResultInterface;
  */
 interface QueryResultInterface
 {
+
+
 /**
  * Returns the field value of the current record, if one exists.
  * This shortcut method helps to check a single field of a SELECT
@@ -46,4 +48,6 @@ interface QueryResultInterface
  * @return mixed
  */
     public function getDriverResult( );
+
+
 }
