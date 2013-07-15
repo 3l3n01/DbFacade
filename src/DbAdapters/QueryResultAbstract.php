@@ -102,6 +102,36 @@ implements QueryResultInterface, \Countable
 
 //  =======  Helpers  ===========
 
+
+
+/**
+ * Returns the original query result from the database conenction used.
+ *
+ * @uses   $result
+ * @return QueryResultAbstract
+ */
+    public function getResult()
+    {
+        return $this->result;
+    }
+
+
+/**
+ * Stores the original query result from the database connection used.
+ *
+ * @param  mixed $result
+ * @return object Fluent Interface
+ * @uses   $result
+ */
+    public function setResult( $result )
+    {
+        $this->result = $result;
+        return $this;
+    }
+
+
+
+
 /**
  * @param mixed   $result Anything that can be foreached.
  * @return object Fluent Interfaces.
