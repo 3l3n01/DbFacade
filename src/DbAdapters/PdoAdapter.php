@@ -31,7 +31,7 @@ implements DatabaseAdapterInterface
 
 /**
  * @param \PDO $pdo PDO Connection
- * @uses  $connection
+ * @uses  storeFetchMode()
  */
     public function __construct( \PDO $pdo )
     {
