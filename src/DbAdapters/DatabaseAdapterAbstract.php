@@ -39,21 +39,22 @@ implements DatabaseAdapterInterface
 
 
 /**
- * Returns a concrete DatabaseAdapterInstance instance for the given database connection.
+ * factory
+ *
+ * Returns a concrete DatabaseAdapterAbstract instance for the given database connection.
  * Currently, the following databases are supported:
  *
- * - PDO
- * - ADODB
+ * - PDO (PDO instance)
+ * - ADODB (ADOConnection instance)
  *
  * @param  mixed $db Database driver
  * @return DatabaseAdapterInterface
  *
  * @uses   AdoDbAdapter
- * @uses   \ADOConnection
  * @uses   PdoAdapter
+ * @uses   \ADOConnection
  * @uses   \PDO
  * @uses   DatabaseAdapterInterface
- * @uses   DatabaseAdapterInterface::debug()
  * @throws InvalidArgumentException
  */
     public static function factory( $database ) {
