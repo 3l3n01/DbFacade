@@ -41,7 +41,7 @@ implements QueryResultInterface
 /**
  * Returns the number of affected rows.
  *
- * This method is mainly needed by PdoAdapter::affectedRows()
+ * This method is mainly needed by PdoFacade::affectedRows()
  * since PDO itself doen not provide a method to return
  * the number of affected rows.
  *

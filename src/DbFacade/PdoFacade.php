@@ -1,8 +1,8 @@
 <?php
 namespace DbFacade;
 
-use \DbFacade\DatabaseAdapterInterface;
-use \DbFacade\DatabaseAdapterAbstract;
+use \DbFacade\DatabaseFacadeInterface;
+use \DbFacade\DatabaseFacadeAbstract;
 use \DbFacade\PdoQueryResult;
 
 use \Exception;
@@ -10,12 +10,12 @@ use \PDO;
 
 
 /**
- * PDO wrapper
+ * PDO facade
  *
  * @author Carsten Witt <carsten.witt@germania-kg.de>
  */
-class PdoAdapter extends DatabaseAdapterAbstract
-implements DatabaseAdapterInterface
+class PdoFacade extends DatabaseFacadeAbstract
+implements DatabaseFacadeInterface
 {
 
 

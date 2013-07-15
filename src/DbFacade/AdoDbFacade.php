@@ -1,8 +1,8 @@
 <?php
 namespace DbFacade;
 
-use \DbFacade\DatabaseAdapterInterface;
-use \DbFacade\DatabaseAdapterAbstract;
+use \DbFacade\DatabaseFacadeInterface;
+use \DbFacade\DatabaseFacadeAbstract;
 
 use \Exception;
 use \ADOConnection;
@@ -11,12 +11,12 @@ use \DbFacade\AdoDbQueryResult;
 
 
 /**
- * ADOdb wrapper
+ * ADOdb facade
  *
  * @author Carsten Witt <carsten.witt@germania-kg.de>
  */
-class AdoDbAdapter extends DatabaseAdapterAbstract
-implements DatabaseAdapterInterface
+class AdoDbFacade extends DatabaseFacadeAbstract
+implements DatabaseFacadeInterface
 {
 
 

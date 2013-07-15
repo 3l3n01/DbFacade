@@ -4,7 +4,7 @@ namespace DbFacade\Tests;
 require_once './src/functions.php';
 require_once '../vendor/autoload.php';
 
-use \DbFacade\DatabaseAdapterAbstract;
+use \DbFacade\DatabaseFacadeAbstract;
 
 
 /****************************************
@@ -22,10 +22,10 @@ $db_pass   = 'kiranu49';
 
 
 $adodb_mysql_conn = getDatabaseADOConnection("mysql", $db_host, $db_name, $db_user, $db_pass, 'utf8', 'pconnect');
-$adodb_adapter    = DatabaseAdapterAbstract::factory($adodb_mysql_conn);
+$adodb_adapter    = DatabaseFacadeAbstract::factory($adodb_mysql_conn);
 
 $pdo_mysql_conn   = getPdoConnection("mysql", $db_host, $db_name, $db_user, $db_pass, 'utf8', 'pconnect');
-$pdo_adapter      = DatabaseAdapterAbstract::factory($pdo_mysql_conn);
+$pdo_adapter      = DatabaseFacadeAbstract::factory($pdo_mysql_conn);
 
-$adapters = array($adodb_adapter, $pdo_adapter);
+$facades = array($adodb_adapter, $pdo_adapter);
 

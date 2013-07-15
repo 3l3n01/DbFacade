@@ -56,37 +56,37 @@ $away = $facade->delete( 'DELETE FROM table WHERE id = :vanish', array(
 
 <h2>Instantiation</h2>
 <p>Let's say you've got a <code>PDOConnection</code> or <code>ADOConnection</code> object.
-To get your concretion of <tt>DatabaseAdapterAbstract</tt>, simply pass to the <code>factory</code> method.
+To get your concretion of <tt>DatabaseFacadeAbstract</tt>, simply pass to the <code>factory</code> method.
 If you pass something that <samp>factory</samp> can not cope with,
 an <samp>\InvalidArgumentException</samp> will tell you.</p>
 
 <pre class="prettyprint linenums">
 &lt;?php
 namespace \MyApp;
-use \DbFacade\DatabaseAdapterAbstract;
+use \DbFacade\DatabaseFacadeAbstract;
 
 // $pdo_mysql_conn: Any PDOConnection
-$adapter = DatabaseAdapterAbstract::factory( $pdo_mysql_conn );
-echo get_class( $adapter ); // DbFacade\PdoAdapter
+$facade = DatabaseFacadeAbstract::factory( $pdo_mysql_conn );
+echo get_class( $facade ); // DbFacade\PdoFacade
 
 // $ado_mysql_conn: Any ADOConnection
-$adapter = DatabaseAdapterAbstract::factory( $ado_mysql_conn );
-echo get_class( $adapter ); // DbFacade\AdoDbAdapter
+$facade = DatabaseFacadeAbstract::factory( $ado_mysql_conn );
+echo get_class( $facade ); // DbFacade\AdoDbFacade
 ?&gt;
 </pre>
 
 <p>DbFacade in test:</p>
 <ul>
 <?php
-foreach($adapters as $index => $adapter):
-    echo '<li><a href="#', $index, '">', get_class($adapter), "</a></li>\n";
+foreach($facades as $index => $facade):
+    echo '<li><a href="#', $index, '">', get_class($facade), "</a></li>\n";
 endforeach;
 ?>
 </ul>
 
 <?php
-foreach($adapters as $index => $adapter):
-echo '<h2 id="' . $index . '">', get_class($adapter), "</h2>\n";
+foreach($facades as $index => $facade):
+echo '<h2 id="' . $index . '">', get_class($facade), "</h2>\n";
 
 try {  // ================= Testing area ====================
 
@@ -101,7 +101,7 @@ LIMIT 4';
 
 echo "$select<br />";
 
-$words = $adapter->read( $select );
+$words = $facade->read( $select );
 echo "<pre>";
 foreach($words as $w) { print_r( $w ); }
 echo "</pre>";
@@ -115,7 +115,7 @@ $insert = 'INSERT INTO sample_words
 (word) VALUES ( :word )';
 echo "$insert<br />";
 
-$result = $adapter->create( $insert, array(
+$result = $facade->create( $insert, array(
     ':word' => "Hallo"
 ));
 echo "<pre>";
@@ -133,7 +133,7 @@ SET word = RAND()
 WHERE id BETWEEN 40 and 44';
 echo "$update<br />";
 
-$result = $adapter->update( $update);
+$result = $facade->update( $update);
 echo "<pre>";
 var_dump($result);
 echo "</pre>";
@@ -147,7 +147,7 @@ $delete = 'DELETE FROM sample_words
 WHERE id BETWEEN 50 and 52';
 echo "$delete<br />";
 
-$result = $adapter->delete( $delete);
+$result = $facade->delete( $delete);
 echo "<pre>";
 var_dump($result);
 echo "</pre>";

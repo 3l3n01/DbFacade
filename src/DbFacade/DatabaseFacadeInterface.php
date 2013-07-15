@@ -5,7 +5,7 @@ namespace DbFacade;
 /**
  * Methods the Database wrapper instances must provide
  */
-interface DatabaseAdapterInterface
+interface DatabaseFacadeInterface
 {
 
 

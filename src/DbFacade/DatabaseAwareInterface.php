@@ -1,7 +1,7 @@
 <?php
 namespace DbFacade;
 
-use \DbFacade\DatabaseAdapterInterface;
+use \DbFacade\DatabaseFacadeInterface;
 
 
 /**
@@ -21,7 +21,7 @@ interface DatabaseAwareInterface
 
 
 /**
- * @return DatabaseAdapterInterface
+ * @return DatabaseFacadeInterface
  * @throws RuntimeException
  */
     public function getDatabase();

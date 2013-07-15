@@ -1,9 +1,9 @@
 <?php
 namespace DbFacade;
 
-use \DbFacade\DatabaseAdapterInterface;
-use \DbFacade\AdoDbAdapter;
-use \DbFacade\PdoAdapter;
+use \DbFacade\DatabaseFacadeInterface;
+use \DbFacade\AdoDbFacade;
+use \DbFacade\PdoFacade;
 
 use \UnexpectedValueException;
 use \InvalidArgumentException;
@@ -13,8 +13,8 @@ use \InvalidArgumentException;
  *
  * @author Carsten Witt <carsten.witt@germania-kg.de>
  */
-abstract class DatabaseAdapterAbstract
-implements DatabaseAdapterInterface
+abstract class DatabaseFacadeAbstract
+implements DatabaseFacadeInterface
 {
 
 
@@ -42,37 +42,37 @@ implements DatabaseAdapterInterface
 /**
  * factory
  *
- * Returns a concrete DatabaseAdapterAbstract instance for the given database connection.
+ * Returns a concrete DatabaseFacadeAbstract instance for the given database connection.
  * Currently, the following databases are supported:
  *
  * - PDO (PDO instance)
  * - ADODB (ADOConnection instance)
  *
  * @param  mixed $db Database driver
- * @return DatabaseAdapterInterface
+ * @return DatabaseFacadeInterface
  *
- * @uses   AdoDbAdapter
- * @uses   PdoAdapter
+ * @uses   AdoDbFacade
+ * @uses   PdoFacade
  * @uses   \ADOConnection
  * @uses   \PDO
- * @uses   DatabaseAdapterInterface
+ * @uses   DatabaseFacadeInterface
  * @throws InvalidArgumentException
  */
     public static function factory( $database ) {
-        if ($database instanceOf DatabaseAdapterInterface) {
+        if ($database instanceOf DatabaseFacadeInterface) {
             return $database;
         }
         if ($database instanceOf \ADOConnection) {
-            return new AdoDbAdapter($database);
+            return new AdoDbFacade($database);
         }
         else if ($database instanceOf \PDO) {
-            return new PdoAdapter($database);
+            return new PdoFacade($database);
         }
         throw new InvalidArgumentException("The database connection given ist currently not supported");
     }
 
 
-//  ============  Implemenet Interface DatabaseAdapterInterface  =============
+//  ============  Implemenet Interface DatabaseFacadeInterface  =============
 
 
 /**
