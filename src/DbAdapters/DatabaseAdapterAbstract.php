@@ -23,6 +23,19 @@ implements DatabaseAdapterInterface
  */
     protected $debug;
 
+/**
+ * Stores the database connection that enables you speaking to a database
+ * @var mixed
+ */
+    protected $connection;
+
+/**
+ * Stores the last query result
+ * @var mixed
+ */
+    protected $result;
+
+
 
 
 /**
@@ -61,20 +74,6 @@ implements DatabaseAdapterInterface
 
 
 
-
-
-/**
- * Stores the database connection that enables you speaking to a database
- * @var mixed
- */
-    protected $connection;
-
-
-/**
- * Stores the last query result
- * @var mixed
- */
-    protected $result;
 
 
 
