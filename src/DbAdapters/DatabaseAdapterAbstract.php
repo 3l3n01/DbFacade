@@ -92,7 +92,7 @@ implements DatabaseAdapterInterface
  */
     public function read($sql, $context = array())
     {
-        return $this->query($sql, $context);
+        return $this->execute($sql, $context);
     }
 
 
