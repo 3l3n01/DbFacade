@@ -89,23 +89,24 @@ implements DatabaseAdapterInterface
  * @return AdoDbQueryResult
  *
  * @uses   $connection
- * @uses   $result
+ * @uses   setResult()
+ * @uses   getResult()
  * @uses   prepare()
  * @uses   getErrorMsg()
- * @uses   ADOConnection::Execute()
+ * @uses   \ADOConnection::Execute()
  * @uses   AdoDbQueryResult
  *
- * @throws Exception
+ * @throws \Exception
  */
     public function execute( $sql, $context = array() )
     {
         $stmt = $this->prepare($sql, $context);
 
         if ($result = $this->connection->Execute($stmt, $context)) {
-            $this->result = new AdoDbQueryResult($result);
-            return $this->result;
+            return $this->setResult(
+                new AdoDbQueryResult($result))->getResult();
         }
-        throw new Exception("Syntax Error: $sql, Error: " . $this->getErrorMsg());
+        throw new \Exception("Syntax Error: $sql, Error: " . $this->getErrorMsg());
     }
 
 

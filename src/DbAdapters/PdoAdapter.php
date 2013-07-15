@@ -81,26 +81,12 @@ implements DatabaseAdapterInterface
 
 /**
  * Method for SELECT statements
- * Executes the given SQL string after preparing it.
- * For preparing, pass an associative array with named paramters as keys and values.
  *
- * @param  string $sql     SQL string, optionally with named parameters
- * @param  array  $context The named parameters and values, default empty
- * @return PdoQueryResult
- *
- * @uses   $connection
- * @uses   $this
- * @uses   PDOStatement::execute()
- * @uses   PdoQueryResult
+ * @uses execute()
  */
     public function query( $sql, $context = array() )
     {
-        $statement = $this->prepare($sql, $context);
-        if ($result = $statement->execute($context)) {
-            $this->result = new PdoQueryResult($statement);
-            return $this->result;
-        }
-        throw new Exception("Syntax Error: $sql, Error: " . $this->getErrorMsg());
+        return $this->execute( $sql, $context );
     }
 
 
@@ -114,7 +100,8 @@ implements DatabaseAdapterInterface
  * @return PdoQueryResult
  *
  * @uses   $connection
- * @uses   $result
+ * @uses   setResult()
+ * @uses   getResult()
  * @uses   prepare()
  * @uses   getErrorMsg()
  * @uses   PDOStatement::execute()
@@ -124,10 +111,9 @@ implements DatabaseAdapterInterface
     public function execute( $sql, $context = array() )
     {
         $statement = $this->prepare($sql);
-
         if ($result = $statement->execute($context)) {
-            $this->result = new PdoQueryResult($statement);
-            return $this->result;
+            return $this->setResult(
+                new PdoQueryResult($statement))->getResult();
         }
         throw new Exception("Syntax Error: $sql, Error: " . $this->getErrorMsg());
     }
@@ -136,10 +122,10 @@ implements DatabaseAdapterInterface
 /**
  * Returns the number of affected rows.
  * @return int
- * @uses   $result
+ * @uses   getResult()
  */
     public function affectedRows() {
-        return $this->result->affectedRows();
+        return $this->getResult()->affectedRows();
     }
 
 
