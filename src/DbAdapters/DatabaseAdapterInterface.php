@@ -22,7 +22,7 @@ interface DatabaseAdapterInterface
 
 
 /**
- * Method for INSERT, UPDATE and DELETE statements
+ * Executes the given SQL string.
  *
  * @param  string $str
  * @return QueryResultInterface

@@ -80,7 +80,6 @@ implements DatabaseAdapterInterface
 
 
 /**
- * Method for INSERT, UPDATE and DELETE statements
  * Executes the given SQL string after preparing it.
  * For preparing, pass an associative array with named parameters as keys and values.
  *
