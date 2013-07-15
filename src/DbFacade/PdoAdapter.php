@@ -1,9 +1,9 @@
 <?php
-namespace DbAdapters;
+namespace DbFacade;
 
-use \DbAdapters\DatabaseAdapterInterface;
-use \DbAdapters\DatabaseAdapterAbstract;
-use \DbAdapters\PdoQueryResult;
+use \DbFacade\DatabaseAdapterInterface;
+use \DbFacade\DatabaseAdapterAbstract;
+use \DbFacade\PdoQueryResult;
 
 use \Exception;
 use \PDO;

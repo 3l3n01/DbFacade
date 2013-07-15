@@ -1,9 +1,9 @@
 <?php
-namespace DbAdapters;
+namespace DbFacade;
 
-use \DbAdapters\DatabaseAdapterInterface;
-use \DbAdapters\AdoDbAdapter;
-use \DbAdapters\PdoAdapter;
+use \DbFacade\DatabaseAdapterInterface;
+use \DbFacade\AdoDbAdapter;
+use \DbFacade\PdoAdapter;
 
 use \UnexpectedValueException;
 use \InvalidArgumentException;

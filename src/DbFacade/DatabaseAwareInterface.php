@@ -1,7 +1,7 @@
 <?php
-namespace DbAdapters;
+namespace DbFacade;
 
-use \DbAdapters\DatabaseAdapterInterface;
+use \DbFacade\DatabaseAdapterInterface;
 
 
 /**

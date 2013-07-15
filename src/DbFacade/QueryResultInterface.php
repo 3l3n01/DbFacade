@@ -1,7 +1,7 @@
 <?php
-namespace DbAdapters;
+namespace DbFacade;
 
-use \DbAdapters\QueryResultInterface;
+use \DbFacade\QueryResultInterface;
 
 
 

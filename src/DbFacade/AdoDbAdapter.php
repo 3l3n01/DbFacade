@@ -1,13 +1,13 @@
 <?php
-namespace DbAdapters;
+namespace DbFacade;
 
-use \DbAdapters\DatabaseAdapterInterface;
-use \DbAdapters\DatabaseAdapterAbstract;
+use \DbFacade\DatabaseAdapterInterface;
+use \DbFacade\DatabaseAdapterAbstract;
 
 use \Exception;
 use \ADOConnection;
 
-use \DbAdapters\AdoDbQueryResult;
+use \DbFacade\AdoDbQueryResult;
 
 
 /**

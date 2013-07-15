@@ -1,8 +1,8 @@
 <?php
-namespace DbAdapters;
+namespace DbFacade;
 
-use \DbAdapters\QueryResultInterface;
-use \DbAdapters\QueryResultAbstract;
+use \DbFacade\QueryResultInterface;
+use \DbFacade\QueryResultAbstract;
 
 use \InvalidArgumentException;
 
