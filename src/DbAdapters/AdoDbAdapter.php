@@ -61,7 +61,7 @@ implements DatabaseAdapterInterface
  * @param  string $str
  * @return string
  * @uses   $connection
- * @uses   \ADOConnections::qstr()
+ * @uses   \ADOConnection::qstr()
  */
     public function quote( $str )
     {
