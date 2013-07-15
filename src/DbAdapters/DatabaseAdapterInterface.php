@@ -9,6 +9,42 @@ interface DatabaseAdapterInterface
 {
 
 
+//  ======  CRUD  =======================
+
+
+/**
+ * Returns the last insert ID
+ * @return int
+ */
+    public function create();
+
+
+/**
+ * Returns the SELECT query result
+ * as concretion of QueryResultAbstract
+ *
+ * @return QueryResultAbstract
+ */
+    public function read();
+
+
+/**
+ * Returns the number of affected rows.
+ * @return int
+ */
+    public function update();
+
+
+/**
+ * Returns the number of affected rows.
+ * @return int
+ */
+    public function delete();
+
+
+//  =======================================
+
+
 /**
  * Escapes and quotes the given string for using in the database.
  * Should not be needed when using prepared statements.

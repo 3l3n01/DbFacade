@@ -175,8 +175,6 @@ implements DatabaseAdapterInterface
 //  ============  Helpers  ========================
 
 
-
-
 /**
  * Returns the last query result.
  *
