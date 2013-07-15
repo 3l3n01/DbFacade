@@ -22,3 +22,8 @@ Recently I needed to modernize a legacy library working with PHP's old school `m
 DbAdapters is for you when you plan to test simple queries against popluar DB dialects (at least when DbAdapters supports more than one or two of them, one fine day), and full-blown DBAL like Doctrine seem too fat for your needs.
 
 DbAdapters is not for you when your application is running well or deploys recent database magic such as PDO, mysqli or [Doctrine DBAL](http://www.doctrine-project.org/projects/dbal.html)
+
+##Please note
+- This project is still in progress, so better not use in production environment. 
+- I am a bloody git newbie. Any hints on how to “git” better will be appreciated :-)
+
