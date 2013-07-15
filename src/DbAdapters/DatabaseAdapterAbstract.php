@@ -151,6 +151,12 @@ implements DatabaseAdapterInterface
     abstract public function getInsertId();
 
 
+
+
+//  ============  Helpers  ========================
+
+
+
 /**
  * Returns the last error message.
  * @return string
@@ -172,7 +178,8 @@ implements DatabaseAdapterInterface
     abstract public function restoreFetchMode();
 
 
-//  ============  Helpers  ========================
+
+//  ===========  Additional Stuff  ===============
 
 
 /**
@@ -199,7 +206,6 @@ implements DatabaseAdapterInterface
         $this->result = $result;
         return $this;
     }
-
 
 
 /**

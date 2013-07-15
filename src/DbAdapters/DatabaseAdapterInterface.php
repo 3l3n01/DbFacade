@@ -78,6 +78,8 @@ interface DatabaseAdapterInterface
     public function getInsertId();
 
 
+//  =======================================
+
 /**
  * Returns the last error message.
  * @return string

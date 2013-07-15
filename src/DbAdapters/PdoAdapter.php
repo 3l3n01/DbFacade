@@ -130,6 +130,9 @@ implements DatabaseAdapterInterface
     }
 
 
+//  ==============  Helpers  =======================
+
+
 /**
  * Returns PDOs' last error message.
  *
@@ -177,7 +180,7 @@ implements DatabaseAdapterInterface
     }
 
 
-//  ==============  Helpers  =======================
+//  ===========  Additional Stuff  ===============
 
 
 /**

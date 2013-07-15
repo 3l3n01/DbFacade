@@ -121,6 +121,9 @@ implements DatabaseAdapterInterface
     }
 
 
+//  ==============  Helpers  =======================
+
+
 /**
  * Returns ADOConnections' last error message.
  *
@@ -169,10 +172,7 @@ implements DatabaseAdapterInterface
     }
 
 
-
-//  ========  Helpers  =========================
-
-
+//  ===========  Additional Stuff  ===============
 
 
 /**
