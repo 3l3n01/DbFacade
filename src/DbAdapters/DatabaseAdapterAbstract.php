@@ -147,16 +147,6 @@ implements DatabaseAdapterInterface
 
 
 /**
- * @uses   $result
- * @return QueryResultAbstract
- */
-    public function getResult()
-    {
-    	return $this->result;
-    }
-
-
-/**
  * Returns the number of affected rows.
  * @return int
  */
@@ -192,6 +182,35 @@ implements DatabaseAdapterInterface
 
 
 //  ============  Helpers  ========================
+
+
+
+
+/**
+ * Returns the last query result.
+ *
+ * @uses   $result
+ * @return QueryResultAbstract
+ */
+    public function getResult()
+    {
+        return $this->result;
+    }
+
+
+/**
+ * Stores the last query result.
+ *
+ * @param  mixed $result
+ * @return object Fluent Interface
+ * @uses   $result
+ */
+    public function setResult( $result )
+    {
+        $this->result = $result;
+        return $this;
+    }
+
 
 
 /**
