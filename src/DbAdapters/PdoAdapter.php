@@ -175,6 +175,14 @@ implements DatabaseAdapterInterface
 
 
 /**
+ * Prepares the given SQL string and returns a prepared stamement
+ * (instance of PDOStatement).
+ *
+ * Optionally, pass an associative array with named paramters as keys and values.
+ *
+ * @param  string $sql     SQL string, optionally with named parameters
+ * @param  array  $context The named parameters and values, default empty
+ *
  * @return PDOStatement
  *
  * @uses   $connection
