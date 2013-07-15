@@ -46,7 +46,6 @@ implements QueryResultInterface, \Countable
  */
     public function __construct($result) {
         $this->setDriverResult( $result );
-        $this->populate( $result );
         $this->setIteratorMode(\SplDoublyLinkedList::IT_MODE_DELETE);
     }
 
@@ -149,7 +148,7 @@ implements QueryResultInterface, \Countable
  * @param mixed   $result Anything that can be foreached.
  * @return object Fluent Interfaces.
  */
-    protected function populate($result) {
+    public function populate($result) {
         foreach($result as $record) {
             $this->push( (object) $record);
         }
