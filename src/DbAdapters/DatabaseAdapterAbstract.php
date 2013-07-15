@@ -72,7 +72,7 @@ implements DatabaseAdapterInterface
     }
 
 
-//  ======  CRUD  =======================
+//  ============  Implemenet Interface DatabaseAdapterInterface  =============
 
 
 /**
@@ -118,7 +118,7 @@ implements DatabaseAdapterInterface
     }
 
 
-//  ============  Implemenet Interface DatabaseAdapterInterface  =============
+//  ======  Typical DB methods  =========
 
 
 /**

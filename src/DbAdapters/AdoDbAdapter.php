@@ -46,7 +46,7 @@ implements DatabaseAdapterInterface
     }
 
 
-//  ========  Implement Interface DatabaseConnectionInterface  =======
+//  ======  Typical DB methods  =========
 
 
 /**

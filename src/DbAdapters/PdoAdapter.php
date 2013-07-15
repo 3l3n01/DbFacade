@@ -45,7 +45,7 @@ implements DatabaseAdapterInterface
     }
 
 
-//  ========  Implement Interface DatabaseConnectionInterface  =======
+//  ======  Typical DB methods  =========
 
 
 /**
@@ -172,8 +172,6 @@ implements DatabaseAdapterInterface
         return $this;
     }
 
-
-//  ===========  Additional Stuff  ===============
 
 
 /**

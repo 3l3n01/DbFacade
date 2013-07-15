@@ -42,7 +42,7 @@ interface DatabaseAdapterInterface
     public function delete();
 
 
-//  =======================================
+//  ======  Typical DB methods  =========
 
 
 /**
@@ -78,26 +78,6 @@ interface DatabaseAdapterInterface
     public function getInsertId();
 
 
-//  =======================================
 
-/**
- * Returns the last error message.
- * @return string
- */
-    public function getErrorMsg( );
-
-
-/**
- * Stores the current fetch mode.
- * @return object Fluent Interface
- */
-    public function backupConfiguration();
-
-
-/**
- * Restores the current fetch mode.
- * @return object Fluent Interface
- */
-    public function restoreConfiguration();
 
 }
