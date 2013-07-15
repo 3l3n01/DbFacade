@@ -45,12 +45,6 @@ implements DatabaseAdapterInterface
     }
 
 
-//  ======  CRUD  =======================
-
-
-
-
-
 //  ========  Implement Interface DatabaseConnectionInterface  =======
 
 
