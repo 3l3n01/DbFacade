@@ -123,6 +123,7 @@ implements DatabaseAdapterInterface
  * Returns the number of affected rows.
  * @return int
  * @uses   getResult()
+ * @use    PdoQueryResult::affectedRows()
  */
     public function affectedRows() {
         return $this->getResult()->affectedRows();
@@ -133,7 +134,7 @@ implements DatabaseAdapterInterface
  * Returns the ID of the last inserted object.
  * @return int
  * @uses   $connection
- * @uses   PDO::lastInsertId()
+ * @uses   \PDO::lastInsertId()
  */
     public function getInsertId()
     {

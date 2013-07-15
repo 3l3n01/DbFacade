@@ -61,6 +61,7 @@ implements DatabaseAdapterInterface
  * @param  string $str
  * @return string
  * @uses   $connection
+ * @uses   \ADOConnections::qstr()
  */
     public function quote( $str )
     {
@@ -101,7 +102,6 @@ implements DatabaseAdapterInterface
     public function execute( $sql, $context = array() )
     {
         $stmt = $this->prepare($sql, $context);
-
         if ($result = $this->connection->Execute($stmt, $context)) {
             return $this->setResult(
                 new AdoDbQueryResult($result))->getResult();
