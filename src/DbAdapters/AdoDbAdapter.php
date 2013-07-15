@@ -37,12 +37,12 @@ implements DatabaseAdapterInterface
  * It can be restored with restoreFetchMode().
  *
  * @param \ADOConnection $ado ADODB Connection
- * @uses  storeFetchMode()
+ * @uses  backupFetchMode()
  */
     public function __construct( \ADOConnection $ado )
     {
         $this->connection = $ado;
-        $this->storeFetchMode();
+        $this->backupFetchMode();
     }
 
 
@@ -148,7 +148,7 @@ implements DatabaseAdapterInterface
  * @uses   ADOConnection::$fetchMode
  * @uses   ADOConnection::SetFetchMode()
  */
-    public function storeFetchMode() {
+    public function backupFetchMode() {
         $this->fetch_mode_backup = (int) $this->connection->fetchMode;
         $this->connection->SetFetchMode(\ADODB_FETCH_ASSOC);
         return $this;

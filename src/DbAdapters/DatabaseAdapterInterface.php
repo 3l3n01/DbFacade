@@ -89,7 +89,7 @@ interface DatabaseAdapterInterface
  * Stores the current fetch mode.
  * @return object Fluent Interface
  */
-    public function storeFetchMode();
+    public function backupFetchMode();
 
 
 /**

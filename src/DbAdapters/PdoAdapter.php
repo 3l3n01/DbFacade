@@ -31,12 +31,12 @@ implements DatabaseAdapterInterface
 
 /**
  * @param \PDO $pdo PDO Connection
- * @uses  storeFetchMode()
+ * @uses  backupFetchMode()
  */
     public function __construct( \PDO $pdo )
     {
         $this->connection = $pdo;
-        $this->storeFetchMode();
+        $this->backupFetchMode();
     }
 
 
@@ -156,7 +156,7 @@ implements DatabaseAdapterInterface
  * @uses   $connection
  * @uses   ADO::getAttribute()
  */
-    public function storeFetchMode() {
+    public function backupFetchMode() {
         $this->fetch_mode_backup = $this->connection->getAttribute(\PDO::ATTR_DEFAULT_FETCH_MODE);
         $this->connection->setAttribute(\PDO::ATTR_DEFAULT_FETCH_MODE, \PDO::FETCH_OBJ);
         return $this;
