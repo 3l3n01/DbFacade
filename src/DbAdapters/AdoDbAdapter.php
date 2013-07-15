@@ -31,7 +31,6 @@ implements DatabaseAdapterInterface
     public $fetch_mode_backup = 0;
 
 
-
 /**
  * Since we'll work with assiciative result sets,
  * the methods creates a backup from the current/previous ADOdb FetchMode.
@@ -48,30 +47,6 @@ implements DatabaseAdapterInterface
         $this->connection = $ado;
         $this->storeFetchMode();
     }
-
-
-
-/**
- * Prepares the given SQL string. Pass an associative array with
- * named paramters as keys and values.
- *
- * @param  string $sql     SQL string, optionally with named parameters
- * @param  array  $context The named parameters and values, default empty
- * @return string
- *
- * @uses   $connection
- * @uses   ADOConnection::Param()
- * @uses   ADOConnection::Prepare()
- */
-    public function prepare( $sql, $context = array() )
-    {
-        foreach($context as $param => $value) {
-            $sql = str_replace($param, $this->connection->Param(substr($param, 1)), $sql);
-        }
-        return $this->connection->Prepare($sql);
-    }
-
-
 
 
 //  ========  Implement Interface DatabaseConnectionInterface  =======
@@ -91,7 +66,6 @@ implements DatabaseAdapterInterface
     }
 
 
-
 /**
  * Method for SELECT statements
  *
@@ -101,7 +75,6 @@ implements DatabaseAdapterInterface
     {
         return $this->execute( $sql, $context );
     }
-
 
 
 /**
@@ -134,8 +107,6 @@ implements DatabaseAdapterInterface
     }
 
 
-
-
 /**
  * Returns the number of affected rows.
  * @return int
@@ -145,7 +116,6 @@ implements DatabaseAdapterInterface
     public function affectedRows() {
         return $this->connection->Affected_Rows();
     }
-
 
 
 /**
@@ -160,12 +130,6 @@ implements DatabaseAdapterInterface
     }
 
 
-
-
-
-
-
-
 /**
  * Returns ADOConnections' last error message.
  *
@@ -177,11 +141,6 @@ implements DatabaseAdapterInterface
     {
         return $this->connection->ErrorMsg();
     }
-
-
-
-//  ========  Helpers  =========================
-
 
 
 /**
@@ -216,6 +175,33 @@ implements DatabaseAdapterInterface
     public function restoreFetchMode() {
         $this->connection->SetFetchMode($this->fetch_mode_backup);
         return $this;
+    }
+
+
+
+//  ========  Helpers  =========================
+
+
+
+
+/**
+ * Prepares the given SQL string. Pass an associative array with
+ * named paramters as keys and values.
+ *
+ * @param  string $sql     SQL string, optionally with named parameters
+ * @param  array  $context The named parameters and values, default empty
+ * @return string
+ *
+ * @uses   $connection
+ * @uses   ADOConnection::Param()
+ * @uses   ADOConnection::Prepare()
+ */
+    public function prepare( $sql, $context = array() )
+    {
+        foreach($context as $param => $value) {
+            $sql = str_replace($param, $this->connection->Param(substr($param, 1)), $sql);
+        }
+        return $this->connection->Prepare($sql);
     }
 
 

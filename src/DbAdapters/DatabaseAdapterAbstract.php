@@ -36,8 +36,6 @@ implements DatabaseAdapterInterface
     protected $result;
 
 
-
-
 /**
  * factory
  *
@@ -71,37 +69,45 @@ implements DatabaseAdapterInterface
     }
 
 
+//  ======  CRUD  =======================
 
 
-
-
-
-
-
-
-
-
-
-
+/**
+ * @return int Last insert ID
+ */
     public function create($sql, $context = array())
     {
         $this->execute($sql, $context);
         return $this->getInsertId();
     }
 
-
+/**
+ * Returns the SELECT query result
+ * as concretion of QueryResultAbstract
+ *
+ * @return QueryResultAbstract
+ */
     public function read($sql, $context = array())
     {
         return $this->query($sql, $context);
     }
 
 
+/**
+ * Returns the number of affected rows.
+ * @return int
+ */
     public function update($sql, $context = array())
     {
         $this->execute($sql, $context);
         return $this->affectedRows();
     }
 
+
+/**
+ * Returns the number of affected rows.
+ * @return int
+ */
     public function delete($sql, $context = array())
     {
         $this->execute($sql, $context);
@@ -109,14 +115,7 @@ implements DatabaseAdapterInterface
     }
 
 
-
-
-
-
-
-
 //  ============  Implemenet Interface DatabaseAdapterInterface  =============
-
 
 
 /**
@@ -138,7 +137,6 @@ implements DatabaseAdapterInterface
     abstract public function query( $str );
 
 
-
 /**
  * Method for INSERT, UPDATE and DELETE statements
  *
@@ -146,8 +144,6 @@ implements DatabaseAdapterInterface
  * @return QueryResultAbstract
  */
     abstract public function execute( $str );
-
-
 
 
 /**
@@ -160,13 +156,11 @@ implements DatabaseAdapterInterface
     }
 
 
-
 /**
  * Returns the number of affected rows.
  * @return int
  */
     abstract public function affectedRows();
-
 
 
 /**
@@ -176,15 +170,11 @@ implements DatabaseAdapterInterface
     abstract public function getInsertId();
 
 
-
-
 /**
  * Returns the last error message.
  * @return string
  */
     abstract public function getErrorMsg( );
-
-
 
 
 /**
@@ -201,10 +191,7 @@ implements DatabaseAdapterInterface
     abstract public function restoreFetchMode();
 
 
-
-
 //  ============  Helpers  ========================
-
 
 
 /**
@@ -239,8 +226,6 @@ implements DatabaseAdapterInterface
         $this->debug = (bool) $flag;
         return $this;
     }
-
-
 
 
 }

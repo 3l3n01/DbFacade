@@ -40,31 +40,28 @@ implements DatabaseAdapterInterface
     }
 
 
-
-
+//  ======  CRUD  =======================
 
 
 /**
- * @return PDOStatement
- *
- * @uses   $connection
- * @uses   PDO::prepare()
- * @uses   PDOStatement::bindValue()
+ * @param  string $sql
+ * @param  array  $context
+ * @return int
+ * @uses   PdoQueryResult::affectedRows()
  */
-    public function prepare( $str, $context = array() )
+    public function update($sql, $context = array())
     {
-        $statement = $this->connection->prepare($str);
+        return $this->execute($sql, $context)->affectedRows();
+    }
 
-        foreach($context as $param => $value) {
-            $statement->bindValue($param, $value);
-        }
 
-        return $statement;
+    public function delete($sql, $context = array())
+    {
+        return $this->execute($sql, $context)->affectedRows();
     }
 
 
 //  ========  Implement Interface DatabaseConnectionInterface  =======
-
 
 
 /**
@@ -80,8 +77,6 @@ implements DatabaseAdapterInterface
     {
         return $this->connection->quote($str);
     }
-
-
 
 
 /**
@@ -107,8 +102,6 @@ implements DatabaseAdapterInterface
         }
         throw new Exception("Syntax Error: $sql, Error: " . $this->getErrorMsg());
     }
-
-
 
 
 /**
@@ -140,7 +133,6 @@ implements DatabaseAdapterInterface
     }
 
 
-
 /**
  * Returns the number of affected rows.
  * @return int
@@ -149,37 +141,6 @@ implements DatabaseAdapterInterface
     public function affectedRows() {
         return $this->result->affectedRows();
     }
-
-
-
-
-
-/**
- * @param  string $sql
- * @param  array  $context
- * @return int
- * @uses   PdoQueryResult::affectedRows()
- */
-    public function update($sql, $context = array())
-    {
-        return $this->execute($sql, $context)->affectedRows();
-    }
-
-    public function delete($sql, $context = array())
-    {
-        return $this->execute($sql, $context)->affectedRows();
-    }
-
-
-
-
-
-
-
-
-
-
-
 
 
 /**
@@ -194,9 +155,6 @@ implements DatabaseAdapterInterface
     }
 
 
-
-
-
 /**
  * Returns PDOs' last error message.
  *
@@ -209,9 +167,6 @@ implements DatabaseAdapterInterface
         $ei = $this->connection->errorInfo();
         return print_r($ei, "noecho");
     }
-
-
-//  ==============  Helpers  =======================
 
 
 /**
@@ -247,6 +202,26 @@ implements DatabaseAdapterInterface
     }
 
 
+//  ==============  Helpers  =======================
+
+
+/**
+ * @return PDOStatement
+ *
+ * @uses   $connection
+ * @uses   PDO::prepare()
+ * @uses   PDOStatement::bindValue()
+ */
+    public function prepare( $str, $context = array() )
+    {
+        $statement = $this->connection->prepare($str);
+
+        foreach($context as $param => $value) {
+            $statement->bindValue($param, $value);
+        }
+
+        return $statement;
+    }
 
 
 }
