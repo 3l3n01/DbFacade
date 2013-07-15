@@ -32,9 +32,9 @@ implements DatabaseAdapterInterface
 
 
 /**
- * Since we'll work with assiciative result sets,
- * the methods creates a backup from the current/previous ADOdb FetchMode.
- * It can be restored with restoreAttributes().
+ * Accepts a ADOCOnnection instance.
+ *
+ * Additionally, takes a backup from its current configuration.
  *
  * @param \ADOConnection $ado ADODB Connection
  * @uses  backupConfiguration()

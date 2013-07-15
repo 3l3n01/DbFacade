@@ -31,6 +31,10 @@ implements DatabaseAdapterInterface
 
 
 /**
+ * Accepts a PDO instance.
+ *
+ * Additionally, takes a backup from its current configuration.
+ *
  * @param \PDO $pdo PDO Connection
  * @uses  backupConfiguration()
  */
