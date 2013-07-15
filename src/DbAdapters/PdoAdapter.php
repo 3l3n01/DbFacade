@@ -80,17 +80,6 @@ implements DatabaseAdapterInterface
 
 
 /**
- * Method for SELECT statements
- *
- * @uses execute()
- */
-    public function query( $sql, $context = array() )
-    {
-        return $this->execute( $sql, $context );
-    }
-
-
-/**
  * Method for INSERT, UPDATE and DELETE statements
  * Executes the given SQL string after preparing it.
  * For preparing, pass an associative array with named parameters as keys and values.

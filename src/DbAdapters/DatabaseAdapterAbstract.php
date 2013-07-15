@@ -129,15 +129,6 @@ implements DatabaseAdapterInterface
 
 
 /**
- * Method for SELECT statements
- *
- * @param  string $str
- * @return QueryResultAbstract
- */
-    abstract public function query( $str );
-
-
-/**
  * Method for INSERT, UPDATE and DELETE statements
  *
  * @param  string $str

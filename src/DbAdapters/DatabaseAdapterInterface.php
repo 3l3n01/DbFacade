@@ -10,20 +10,14 @@ interface DatabaseAdapterInterface
 
 
 /**
+ * Escapes and quotes the given string for using in the database.
+ * Should not be needed when using prepared statements.
+ *
  * @param  string $str
  * @return string
  */
     public function quote( $str );
 
-
-
-/**
- * Method for SELECT statements
- *
- * @param  string $str
- * @return QueryResultInterface
- */
-    public function query( $str );
 
 
 
