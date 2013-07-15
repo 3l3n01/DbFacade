@@ -46,6 +46,7 @@ implements QueryResultInterface, \Countable
  */
     public function __construct($result) {
         $this->setDriverResult( $result );
+        $this->populate( $result );
         $this->setIteratorMode(\SplDoublyLinkedList::IT_MODE_DELETE);
     }
 

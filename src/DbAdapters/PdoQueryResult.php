@@ -54,6 +54,21 @@ implements QueryResultInterface
     }
 
 
+/**
+ * Since PDO "explodes" when looping over executed INSERT statements,
+ * we need to hinder it by evaluating columnCount().
+ *
+ * @param mixed   $result Anything that can be foreached.
+ * @return object Fluent Interfaces.
+ */
+    public function populate($result) {
+        if (!$result->columnCount()) {
+            return $this;
+        }
+        return parent::populate($result);
+        return $this;
+    }
+
 
 
 

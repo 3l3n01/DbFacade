@@ -45,30 +45,6 @@ implements DatabaseAdapterInterface
     }
 
 
-
-
-/**
- * Returns the SELECT query result
- * as concretion of QueryResultAbstract
- *
- * @return QueryResultAbstract
- */
-    public function read($sql, $context = array())
-    {
-        $pdo_query_result = $this->execute($sql, $context);
-        $pdo_query_result->populate($pdo_query_result->getDriverResult());
-        return $pdo_query_result;
-
-    }
-
-
-
-
-
-
-
-
-
 //  ======  Typical DB methods  =========
 
 
