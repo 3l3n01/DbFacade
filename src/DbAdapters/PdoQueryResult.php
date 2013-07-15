@@ -37,18 +37,14 @@ implements QueryResultInterface
 //  =======  Implement interface QueryResultInterface  ===========
 
 
-
 /**
  * Returns the number of affected rows.
- *
  * @return int
  * @uses   $result
- * @uses   PDOStatement::rowCount()
  */
     public function affectedRows() {
         return $this->result->rowCount();
     }
-
 
 
 

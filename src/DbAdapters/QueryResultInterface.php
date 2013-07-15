@@ -31,9 +31,4 @@ interface QueryResultInterface
     public function getRows();
 
 
-/**
- * Returns the number of affected rows
- * @return int
- */
-    public function affectedRows();
 }

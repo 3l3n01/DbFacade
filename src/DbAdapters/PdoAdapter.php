@@ -130,7 +130,7 @@ implements DatabaseAdapterInterface
  */
     public function execute( $sql, $context = array() )
     {
-        $statement = $this->prepare($sql, $context);
+        $statement = $this->prepare($sql);
 
         if ($result = $statement->execute($context)) {
             $this->result = new PdoQueryResult($statement);
@@ -141,16 +141,43 @@ implements DatabaseAdapterInterface
 
 
 
-
-
 /**
  * Returns the number of affected rows.
  * @return int
  * @uses   $result
  */
     public function affectedRows() {
-        return $this->result->rowCount();
+        return $this->result->affectedRows();
     }
+
+
+
+
+
+/**
+ * @param  string $sql
+ * @param  array  $context
+ * @return int
+ * @uses   PdoQueryResult::affectedRows()
+ */
+    public function update($sql, $context = array())
+    {
+        return $this->execute($sql, $context)->affectedRows();
+    }
+
+    public function delete($sql, $context = array())
+    {
+        return $this->execute($sql, $context)->affectedRows();
+    }
+
+
+
+
+
+
+
+
+
 
 
 

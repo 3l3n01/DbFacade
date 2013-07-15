@@ -39,9 +39,7 @@ implements QueryResultInterface, \Countable
         $this->result = $result;
         $this->populate($result);
         $this->setIteratorMode(\SplDoublyLinkedList::IT_MODE_DELETE);
-        #$this->setIteratorMode(\SplDoublyLinkedList::IT_MODE_KEEP);
     }
-
 
 
 
@@ -99,12 +97,6 @@ implements QueryResultInterface, \Countable
         return $result;
     }
 
-
-/**
- * Returns the number of affected rows.
- * @return int
- */
-    abstract public function affectedRows();
 
 
 

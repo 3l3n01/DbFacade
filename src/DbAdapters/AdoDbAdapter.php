@@ -134,6 +134,8 @@ implements DatabaseAdapterInterface
     }
 
 
+
+
 /**
  * Returns the number of affected rows.
  * @return int
@@ -141,7 +143,7 @@ implements DatabaseAdapterInterface
  * @uses   ADOConnection::Affected_Rows()
  */
     public function affectedRows() {
-        return $this->result->Affected_Rows();
+        return $this->connection->Affected_Rows();
     }
 
 
@@ -156,6 +158,9 @@ implements DatabaseAdapterInterface
     {
         return $this->connection->Insert_ID();
     }
+
+
+
 
 
 

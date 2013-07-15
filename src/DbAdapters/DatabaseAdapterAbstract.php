@@ -77,12 +77,42 @@ implements DatabaseAdapterInterface
     protected $result;
 
 
-/**
- * Stores the original FetchMode to make it restorable
- * after using in this context.
- * @var mixed
- */
-    public $fetch_mode_backup = 0;
+
+
+
+
+
+
+    public function create($sql, $context = array())
+    {
+        $this->execute($sql, $context);
+        return $this->getInsertId();
+    }
+
+
+    public function read($sql, $context = array())
+    {
+        return $this->query($sql, $context);
+    }
+
+
+    public function update($sql, $context = array())
+    {
+        $this->execute($sql, $context);
+        return $this->affectedRows();
+    }
+
+    public function delete($sql, $context = array())
+    {
+        $this->execute($sql, $context);
+        return $this->affectedRows();
+    }
+
+
+
+
+
+
 
 
 //  ============  Implemenet Interface DatabaseAdapterInterface  =============
@@ -157,6 +187,8 @@ implements DatabaseAdapterInterface
 
 
     abstract public function storeFetchMode();
+
+    abstract public function restoreFetchMode();
 
 
 //  ============  Helpers  ========================

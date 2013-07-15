@@ -37,25 +37,5 @@ implements QueryResultInterface
     }
 
 
-//  =======  Implement interface QueryResultInterface  ===========
-
-
-
-
-/**
- * Returns the number of affected rows.
- *
- * @return int
- * @uses   $result
- * @uses   ADORecordSet::RecordCount()
- * @uses   ADOConnection::$dataProvider()
- * @uses   ADOConnection::Affected_Rows()
- */
-    public function affectedRows() {
-        return $this->result->dataProvider == "empty"
-        ?  : $this->result->connection->Affected_Rows();
-    }
-
-
 
 }
