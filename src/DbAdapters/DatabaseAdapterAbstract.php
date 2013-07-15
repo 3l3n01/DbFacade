@@ -186,9 +186,21 @@ implements DatabaseAdapterInterface
 
 
 
+
+/**
+ * Stores the current fetch mode.
+ * @return object Fluent Interface
+ */
     abstract public function storeFetchMode();
 
+
+/**
+ * Restores the current fetch mode.
+ * @return object Fluent Interface
+ */
     abstract public function restoreFetchMode();
+
+
 
 
 //  ============  Helpers  ========================

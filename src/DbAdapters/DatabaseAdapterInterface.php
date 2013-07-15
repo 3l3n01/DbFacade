@@ -66,4 +66,17 @@ interface DatabaseAdapterInterface
     public function getErrorMsg( );
 
 
+/**
+ * Stores the current fetch mode.
+ * @return object Fluent Interface
+ */
+    public function storeFetchMode();
+
+
+/**
+ * Restores the current fetch mode.
+ * @return object Fluent Interface
+ */
+    public function restoreFetchMode();
+
 }
