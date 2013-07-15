@@ -147,8 +147,8 @@ implements DatabaseAdapterInterface
  */
     public function backupConfiguration() {
         $this->pdo_configuration_backup = array(
-            \PDO::ATTR_DEFAULT_FETCH_MODE = this->connection->getAttribute(\PDO::ATTR_DEFAULT_FETCH_MODE),
-            \PDO::ATTR_ERRMODE            = this->connection->getAttribute(\PDO::ATTR_ERRMODE),
+            \PDO::ATTR_DEFAULT_FETCH_MODE => $this->connection->getAttribute(\PDO::ATTR_DEFAULT_FETCH_MODE),
+            \PDO::ATTR_ERRMODE            => $this->connection->getAttribute(\PDO::ATTR_ERRMODE),
         );
 
         $this->connection->setAttribute(\PDO::ATTR_DEFAULT_FETCH_MODE, \PDO::FETCH_OBJ);
