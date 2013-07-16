@@ -19,6 +19,7 @@ implements DatabaseFacadeInterface
 
 
 /**
+ * Stores the debug status.
  * @var bool
  */
     protected $debug;
