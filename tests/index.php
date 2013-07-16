@@ -3,7 +3,6 @@ namespace DbFacade\Tests;
 require_once 'config.php';
 require_once 'inc/html.intro.php';
 ?>
-
 <div class="page-header">
   <h1>DbFacade <small>gives you what you are really interested in</small></h1>
 </div>
@@ -26,28 +25,32 @@ require_once 'inc/html.intro.php';
     <dt>SELECT</dt>
     <dd>
     <pre class="prettyprint linenums">
-$records = $facade->read( 'SELECT * FROM table WHERE id = :what', array(
+// returns concretion of \DbFacade\QueryResultAbstract
+$records = $facade->read( 'SELECT * FROM words WHERE id = :what', array(
     ':what' => $search
 ));
 </pre>
     </dd>
     <dt>CREATE</dt>
     <dd><pre class="prettyprint linenums">
-$new_id = $facade->create( 'INSERT INTO table (field) VALUES (:new)', array(
+// returns last insert ID
+$new_id = $facade->create( 'INSERT INTO words (word) VALUES (:new)', array(
     ':new' => "Foo"
 ));
 </pre>
     </dd>
     <dt>UDPATE</dt>
     <dd><pre class="prettyprint linenums">
-$affected = $facade->update( 'UPDATE table SET field = :value WHERE 1', array(
+// returns number of affected rows
+$affected = $facade->update( 'UPDATE words SET word = :value WHERE 1', array(
     ':value' => "Bar"
 ));
 </pre>
     </dd>
     <dt>DELETE</dt>
     <dd><pre class="prettyprint linenums">
-$away = $facade->delete( 'DELETE FROM table WHERE id = :vanish', array(
+// returns number of affected rows
+$gone = $facade->delete( 'DELETE FROM words WHERE id = :vanish', array(
     ':vanish' => $id
 ));
 </pre>
@@ -60,8 +63,8 @@ To get your concretion of <tt>DatabaseFacadeAbstract</tt>, simply pass to the <c
 If you pass something that <samp>factory</samp> can not cope with,
 an <samp>\InvalidArgumentException</samp> will tell you.</p>
 
-<pre class="prettyprint linenums">
-&lt;?php
+<?php
+pretty_print('&lt;?php
 namespace \MyApp;
 use \DbFacade\DatabaseFacadeAbstract;
 
@@ -72,8 +75,10 @@ echo get_class( $facade ); // DbFacade\PdoFacade
 // $ado_mysql_conn: Any ADOConnection
 $facade = DatabaseFacadeAbstract::factory( $ado_mysql_conn );
 echo get_class( $facade ); // DbFacade\AdoDbFacade
-?&gt;
-</pre>
+?&gt;');
+?>
+
+
 
 <p>DbFacade in test:</p>
 <ul>
@@ -92,14 +97,15 @@ try {  // ================= Testing area ====================
 
 
 
+echo "<h3>Selects</h3>\n";
+
 $select = 'SELECT
-id,
-word
-FROM sample_words
+*
+FROM words
 WHERE 1
 LIMIT 4';
 
-echo "$select<br />";
+pretty_print($select);
 
 $words = $facade->read( $select );
 echo "<pre>";
@@ -110,16 +116,23 @@ echo "<hr>";
 
 
 
+echo "<h3>Inserts</h3>\n";
+$max = 10;
+$insert = 'INSERT INTO words
+( word )
+VALUES
+( :word )';
 
-$insert = 'INSERT INTO sample_words
-(word) VALUES ( :word )';
-echo "$insert<br />";
+echo "Running ", $max, " &times ";
+pretty_print( $insert );
 
-$result = $facade->create( $insert, array(
-    ':word' => "Hallo"
-));
 echo "<pre>";
-var_dump($result);
+for ($i = 0; $i < 10; $i++):
+    $insert_id = $facade->create( $insert, array(
+        ':word' => "Hallo"
+    ));
+    echo $insert_id, " ";
+endfor;
 echo "</pre>";
 echo "<hr>";
 
@@ -127,11 +140,12 @@ echo "<hr>";
 
 
 
+echo "<h3>Updates</h3>\n";
+$update = 'UPDATE words
+SET random = RAND()
+WHERE id BETWEEN 3 and 7';
 
-$update = 'UPDATE sample_words
-SET word = RAND()
-WHERE id BETWEEN 40 and 44';
-echo "$update<br />";
+pretty_print( $update );
 
 $result = $facade->update( $update);
 echo "<pre>";
@@ -142,12 +156,16 @@ echo "<hr>";
 
 
 
+echo "<h3>Deletions</h3>\n";
+$delete = 'DELETE FROM words
+WHERE id > (:newest - 5)
+LIMIT 3';
 
-$delete = 'DELETE FROM sample_words
-WHERE id BETWEEN 50 and 52';
-echo "$delete<br />";
+pretty_print( $delete );
 
-$result = $facade->delete( $delete);
+$result = $facade->delete( $delete, array(
+    ':newest' => $insert_id
+) );
 echo "<pre>";
 var_dump($result);
 echo "</pre>";
@@ -164,6 +182,6 @@ catch (\Exception $e) {
     "</div><!-- /.exception -->\n";
 }
 
-endforeach; // Adapters foreach
+endforeach; // Facedes foreach
 
 require_once 'inc/html.outro.php';

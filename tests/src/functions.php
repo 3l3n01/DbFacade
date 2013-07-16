@@ -23,6 +23,18 @@ function pre_dump($var)
 }
 
 
+function pretty($code)
+{
+    return '<pre class="prettyprint linenums">'
+          . $code
+          . "</pre>\n";
+}
+
+function pretty_print($code)
+{
+    echo pretty($code);
+}
+
 
 function testUnit($title, $content = '', $code='')
 {

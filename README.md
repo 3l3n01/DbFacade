@@ -11,9 +11,14 @@ Thus, DbFacade provides a simple method API for simple creating, reading, updati
 Recently I needed to modernize a legacy library working with PHP's old school `mysql-*`-functions, wrapped by ADOdb. I found it annoying that DB wrappers and drivers each have their own concepts on how to find the affected rows or retrieve the last insert ID.
 
 ##Should I use it?
-DbFacade is for you when you plan to test simple queries against popluar DB dialects (well, at least when DbFacade supports more than one or two of them, one fine day), and full-blown DBAL like Doctrine seem too fat for your needs.
+**DbFacade is for you, when** 
 
-**DbFacade is not for you** when your application is running well or deploys recent database magic such as PDO, mysqli or [Doctrine DBAL](http://www.doctrine-project.org/projects/dbal.html).
+- you write a small standalone app or plugin that should not be determined to a certain DB
+- you plan to test simple queries against popluar DB dialects  
+   (well, at least when DbFacade supports more than one or two of them, one fine day), 
+- full-blown DBAL like Doctrine seem too fat for your needs.
+
+**DbFacade is not for you** when your existing application is running well or deploys recent database magic such as PDO, mysqli or [Doctrine DBAL](http://www.doctrine-project.org/projects/dbal.html).
 
 ##Please note
 - This project is still in progress, so better not use in production environment.

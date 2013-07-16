@@ -14,10 +14,10 @@ use \DbFacade\DatabaseFacadeAbstract;
  ****************************************/
 $db_driver = 'mysql';
 $db_host   = 'localhost';
-$db_name   = 'NewFreetag';
-$db_user   = 'root';
-#$db_pass   = 'buropa19';
-$db_pass   = 'kiranu49';
+$db_name   = 'MyDatabase';
+$db_user   = 'user';
+$db_pass   = 'password';
+
 
 
 
