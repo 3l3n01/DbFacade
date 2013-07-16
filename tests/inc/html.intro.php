@@ -14,7 +14,10 @@
 <link href="http://twitter.github.com/bootstrap/assets/css/docs.css" rel="stylesheet">
 
 <style type="text/css">
-	h3 {
+	.container {
+		max-width: 65em;
+	}
+	h3, h4 {
 		margin-top: 30px;
 	}
 </style>

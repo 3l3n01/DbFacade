@@ -21,6 +21,7 @@ require_once 'inc/html.intro.php';
     <li class="active"><a href="#overview" data-toggle="tab">Overview</a></li>
     <li><a href="#instantiate" data-toggle="tab">Instantiation</a></li>
     <li><a href="#select" data-toggle="tab">SELECT</a></li>
+    <li><a href="#fields" data-toggle="tab">Fields</a></li>
     <li><a href="#insert" data-toggle="tab">INSERT</a></li>
     <li><a href="#update" data-toggle="tab">UPDATE</a></li>
     <li><a href="#delete" data-toggle="tab">DELETE</a></li>
@@ -34,6 +35,8 @@ require_once 'inc/html.intro.php';
 <div class="tab-pane active" id="overview">
 <?php require_once 'inc/inc.overview.php'; ?>
 </div> <!-- /.tab-pane -->
+
+
 
 <div class="tab-pane" id="instantiate">
 <?php require_once 'inc/inc.instantiate.php'; ?>
@@ -51,6 +54,18 @@ The result object consists of <code>StdClass</code> objects.</p>
 require_once 'inc/test.select.php';
 ?>
 </div>
+
+
+<div class="tab-pane" id="fields">
+<p class="lead">Since your <code>read</code> query result is derived from <code>SplQueue</code>, it is <a href="http://www.php.net/manual/en/class.iterator.php">iterable</a> via <code>current</code>, <code>key</code>, <code>next</code> and <code>rewind</code>.
+Your first row is automatically available. You may access certain fields via method <code>field</code> or quick and dirty by a <a href="http://www.php.net/manual/en/language.oop5.overloading.php#object.get">“magic member”</a>.</p>
+
+
+<?php
+require_once 'inc/test.select.access.php';
+?>
+</div>
+
 
 
 <div class="tab-pane" id="insert">

@@ -3,12 +3,12 @@ namespace DbFacade\Tests;
 ?>
 
 
-<h2>Instantiation</h2>
+<p class="lead">DbFacade assumes you have got a valid database connection.
+Simply pass the connection to <code>DatabaseFacadeAbstract::factory</code>
+to get your personal facade concretion.
 
-<p>Let's say you've got a <code>PDOConnection</code> or <code>ADOConnection</code> object.
-To get your concretion of <tt>DatabaseFacadeAbstract</tt>, simply pass to the <code>factory</code> method.
-If you pass something that <samp>factory</samp> can not cope with,
-an <samp>\InvalidArgumentException</samp> will tell you.</p>
+If you pass something that the factory method can not cope with,
+an <code>\InvalidArgumentException</code> will tell you.</p>
 
 <?php
 pretty_print('&lt;?php

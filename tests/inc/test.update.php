@@ -3,7 +3,7 @@ namespace DbFacade\Tests;
 
 foreach($facades as $index => $facade):
 
-echo "<h3>", get_class($facade), "</h3>\n";
+echo "<h4>", get_class($facade), "</h4>\n";
 
 $update = 'UPDATE words SET random = RAND() WHERE id BETWEEN 3 and 7';
 
