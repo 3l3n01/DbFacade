@@ -13,7 +13,7 @@ Recently I needed to modernize a legacy library working with PHP's old school `m
 ##Should I use it?
 **DbFacade is for you, when** 
 
-- you write a small standalone app or plugin that should not be determined to a certain DB
+- you write a small standalone app or plugin that should not be determined to a certain DB or ORM.
 - you plan to test simple queries against popluar DB dialects  
    (well, at least when DbFacade supports more than one or two of them, one fine day), 
 - full-blown DBAL like Doctrine seem too fat for your needs.
