@@ -2,7 +2,7 @@
     "name": "tomkyle/dbfacade",
     "type": "library",
     "description": "Streamlines talking with databases.",
-    "keywords": ["database","facade","adapter","pdo","adodb"],
+    "keywords": ["php","mysql","database","facade","adapter","pdo","adodb"],
 
     "license": "MIT",
     "authors": [
