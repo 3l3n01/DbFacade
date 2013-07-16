@@ -3,9 +3,7 @@
 .htaccess
 vendor
 composer.lock
-docs
-doc
-phpdoc.xml
+apigen.neon
 
 
 

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.8.0" />
+
+	<title>Interface DbFacade\QueryResultInterface</title>
+
+	<script type="text/javascript" src="resources/combined.js?1101379305"></script>
+	<script type="text/javascript" src="elementlist.js?789524904"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li class="active"><a href="namespace-DbFacade.html">DbFacade</a>
+						</li>
+				<li><a href="namespace-PHP.html">PHP</a>
+						</li>
+			</ul>
+		</div>
+
+		<hr />
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-DbFacade.AdoDbFacade.html">AdoDbFacade</a></li>
+				<li><a href="class-DbFacade.AdoDbQueryResult.html">AdoDbQueryResult</a></li>
+				<li><a href="class-DbFacade.DatabaseFacadeAbstract.html">DatabaseFacadeAbstract</a></li>
+				<li><a href="class-DbFacade.PdoFacade.html">PdoFacade</a></li>
+				<li><a href="class-DbFacade.PdoQueryResult.html">PdoQueryResult</a></li>
+				<li><a href="class-DbFacade.QueryResultAbstract.html">QueryResultAbstract</a></li>
+			</ul>
+
+			<h3>Interfaces</h3>
+			<ul>
+				<li><a href="class-DbFacade.DatabaseAwareInterface.html">DatabaseAwareInterface</a></li>
+				<li><a href="class-DbFacade.DatabaseFacadeInterface.html">DatabaseFacadeInterface</a></li>
+				<li class="active"><a href="class-DbFacade.QueryResultInterface.html">QueryResultInterface</a></li>
+			</ul>
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<input type="text" name="q" class="text" />
+		<input type="submit" value="Search" />
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-DbFacade.html" title="Summary of DbFacade"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Interface QueryResultInterface</h1>
+
+
+	<div class="description">
+	
+<p>Methods to provide simplified access to the results of DB queries.</p>
+
+	</div>
+
+
+
+
+
+	<div>
+		<h4>Direct known implementers</h4>
+			<a href="class-DbFacade.AdoDbQueryResult.html">DbFacade\AdoDbQueryResult</a>, 
+			<a href="class-DbFacade.PdoQueryResult.html">DbFacade\PdoQueryResult</a>, 
+			<a href="class-DbFacade.QueryResultAbstract.html">DbFacade\QueryResultAbstract</a>
+	</div>
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-DbFacade.html">DbFacade</a><br />
+		
+
+				<b>Author:</b>
+				Carsten Witt &lt;<a
+href="mailto:carsten.witt&#64;gmail.com">carsten.witt&#64;<!---->gmail.com</a>&gt;<br />
+		<b>Located at</b> <a href="source-class-DbFacade.QueryResultInterface.html#5-50" title="Go to source code">DbFacade/QueryResultInterface.php</a><br />
+	</div>
+
+
+
+	<table class="summary" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="field" id="_field">
+
+		<td class="attributes"><code>
+			 public 
+			mixed
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_field">#</a>
+		<code><a href="source-class-DbFacade.QueryResultInterface.html#14-22" title="Go to source code">field</a>( <span>string <var>$field</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Returns the field value of the current record, if one exists. This shortcut
+method helps to check a single field of a SELECT that targets exactly one
+record, such as <tt>SELECT COUNT(*) AS count...</tt></p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns the field value of the current record, if one exists. This shortcut
+method helps to check a single field of a SELECT that targets exactly one
+record, such as <tt>SELECT COUNT(*) AS count...</tt></p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$field</var></dt>
+					<dd><code>string</code><br>$field Field name</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>mixed</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getRows" id="_getRows">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-DbFacade.QueryResultInterface.html">DbFacade\QueryResultInterface</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getRows">#</a>
+		<code><a href="source-class-DbFacade.QueryResultInterface.html#25-30" title="Go to source code">getRows</a>( )</code>
+
+		<div class="description short">
+			
+<p>Returns a QueryResultInterface instance with all records.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns a QueryResultInterface instance with all records.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-DbFacade.QueryResultInterface.html">DbFacade\QueryResultInterface</a></code></code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setDriverResult" id="_setDriverResult">
+
+		<td class="attributes"><code>
+			 public 
+			object
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setDriverResult">#</a>
+		<code><a href="source-class-DbFacade.QueryResultInterface.html#33-39" title="Go to source code">setDriverResult</a>( <span>mixed <var>$result</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Stores the original query result from the database connection used.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Stores the original query result from the database connection used.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$result</var></dt>
+					<dd><code>mixed</code><br>$result</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>object</code><br>Fluent Interface<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getDriverResult" id="_getDriverResult">
+
+		<td class="attributes"><code>
+			 public 
+			mixed
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getDriverResult">#</a>
+		<code><a href="source-class-DbFacade.QueryResultInterface.html#42-47" title="Go to source code">getDriverResult</a>( )</code>
+
+		<div class="description short">
+			
+<p>Returns the original query result from the database connection used.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns the original query result from the database connection used.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>mixed</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		 API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>

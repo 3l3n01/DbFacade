@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.8.0" />
+
+	<title>Class DbFacade\DatabaseFacadeAbstract</title>
+
+	<script type="text/javascript" src="resources/combined.js?1101379305"></script>
+	<script type="text/javascript" src="elementlist.js?789524904"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li class="active"><a href="namespace-DbFacade.html">DbFacade</a>
+						</li>
+				<li><a href="namespace-PHP.html">PHP</a>
+						</li>
+			</ul>
+		</div>
+
+		<hr />
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-DbFacade.AdoDbFacade.html">AdoDbFacade</a></li>
+				<li><a href="class-DbFacade.AdoDbQueryResult.html">AdoDbQueryResult</a></li>
+				<li class="active"><a href="class-DbFacade.DatabaseFacadeAbstract.html">DatabaseFacadeAbstract</a></li>
+				<li><a href="class-DbFacade.PdoFacade.html">PdoFacade</a></li>
+				<li><a href="class-DbFacade.PdoQueryResult.html">PdoQueryResult</a></li>
+				<li><a href="class-DbFacade.QueryResultAbstract.html">QueryResultAbstract</a></li>
+			</ul>
+
+			<h3>Interfaces</h3>
+			<ul>
+				<li><a href="class-DbFacade.DatabaseAwareInterface.html">DatabaseAwareInterface</a></li>
+				<li><a href="class-DbFacade.DatabaseFacadeInterface.html">DatabaseFacadeInterface</a></li>
+				<li><a href="class-DbFacade.QueryResultInterface.html">QueryResultInterface</a></li>
+			</ul>
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<input type="text" name="q" class="text" />
+		<input type="submit" value="Search" />
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-DbFacade.html" title="Summary of DbFacade"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class DatabaseFacadeAbstract</h1>
+
+
+	<div class="description">
+	
+<p>Abstract database wrapper</p>
+
+	</div>
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+<b><span>DbFacade\DatabaseFacadeAbstract</span></b>			
+			 implements 
+				<a href="class-DbFacade.DatabaseFacadeInterface.html"><span>DbFacade\DatabaseFacadeInterface</span></a>
+			
+			
+		</dd>
+	</dl>
+
+
+	<div>
+		<h4>Direct known subclasses</h4>
+			<a href="class-DbFacade.AdoDbFacade.html">DbFacade\AdoDbFacade</a>, 
+			<a href="class-DbFacade.PdoFacade.html">DbFacade\PdoFacade</a>
+	</div>
+
+
+
+
+
+
+	<div class="info">
+		<b>Abstract</b><br />
+		
+		<b>Namespace:</b> <a href="namespace-DbFacade.html">DbFacade</a><br />
+		
+
+				<b>Author:</b>
+				Carsten Witt &lt;<a
+href="mailto:carsten.witt&#64;germania-kg.de">carsten.witt&#64;<!---->germania-kg.de</a>&gt;<br />
+		<b>Located at</b> <a href="source-class-DbFacade.DatabaseFacadeAbstract.html#11-251" title="Go to source code">DbFacade/DatabaseFacadeAbstract.php</a><br />
+	</div>
+
+
+
+	<table class="summary" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="factory" id="_factory">
+
+		<td class="attributes"><code>
+			 public static
+			<code><a href="class-DbFacade.DatabaseFacadeInterface.html">DbFacade\DatabaseFacadeInterface</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_factory">#</a>
+		<code><a href="source-class-DbFacade.DatabaseFacadeAbstract.html#43-73" title="Go to source code">factory</a>( <span>mixed <var>$database</var></span> )</code>
+
+		<div class="description short">
+			
+<p>factory</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>factory</p>
+
+<p>Returns a concrete DatabaseFacadeAbstract instance for the given database
+connection. Currently, the following databases are supported:</p>
+
+<ul>
+	<li>PDO (PDO instance)</li>
+
+	<li>ADODB (ADOConnection instance)</li>
+</ul>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$database</var></dt>
+					<dd><code>mixed</code><br>$db Database driver</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-DbFacade.DatabaseFacadeInterface.html">DbFacade\DatabaseFacadeInterface</a></code></code><br />
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					<code><code><a href="class-InvalidArgumentException.html">InvalidArgumentException</a></code></code><br />
+				</div>
+
+				<h4>Uses</h4>
+				<div class="list">
+						<code><code><a href="class-DbFacade.AdoDbFacade.html">DbFacade\AdoDbFacade</a></code></code> <br />
+						<code><code><a href="class-DbFacade.PdoFacade.html">DbFacade\PdoFacade</a></code></code> <br />
+						\ADOConnection<br />
+						<code><code><a href="class-PDO.html">PDO</a></code></code> <br />
+						<code><code><a href="class-DbFacade.DatabaseFacadeInterface.html">DbFacade\DatabaseFacadeInterface</a></code></code> <br />
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="create" id="_create">
+
+		<td class="attributes"><code>
+			 public 
+			integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_create">#</a>
+		<code><a href="source-class-DbFacade.DatabaseFacadeAbstract.html#79-88" title="Go to source code">create</a>( <span>mixed <var>$sql</var></span>, <span>mixed <var>$context</var> = <span class="php-keyword1">array</span>()</span> )</code>
+
+		<div class="description short">
+			
+<p>Executes the given INSERT query and returns the last insert ID.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Executes the given INSERT query and returns the last insert ID.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>integer</code><br>Last insert ID<br />
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-DbFacade.DatabaseFacadeInterface.html#_create">DbFacade\DatabaseFacadeInterface::create()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="read" id="_read">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-DbFacade.QueryResultAbstract.html">DbFacade\QueryResultAbstract</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_read">#</a>
+		<code><a href="source-class-DbFacade.DatabaseFacadeAbstract.html#90-99" title="Go to source code">read</a>( <span>mixed <var>$sql</var></span>, <span>mixed <var>$context</var> = <span class="php-keyword1">array</span>()</span> )</code>
+
+		<div class="description short">
+			
+<p>Executes the given SELECT query and returns a concretion of
+QueryResultAbstract that carries the results.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Executes the given SELECT query and returns a concretion of
+QueryResultAbstract that carries the results.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-DbFacade.QueryResultAbstract.html">DbFacade\QueryResultAbstract</a></code></code><br />
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-DbFacade.DatabaseFacadeInterface.html#_read">DbFacade\DatabaseFacadeInterface::read()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="update" id="_update">
+
+		<td class="attributes"><code>
+			 public 
+			integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_update">#</a>
+		<code><a href="source-class-DbFacade.DatabaseFacadeAbstract.html#102-110" title="Go to source code">update</a>( <span>mixed <var>$sql</var></span>, <span>mixed <var>$context</var> = <span class="php-keyword1">array</span>()</span> )</code>
+
+		<div class="description short">
+			
+<p>Executes the given UPDATE query and returns the number of affected rows.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Executes the given UPDATE query and returns the number of affected rows.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>integer</code><br />
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-DbFacade.DatabaseFacadeInterface.html#_update">DbFacade\DatabaseFacadeInterface::update()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="delete" id="_delete">
+
+		<td class="attributes"><code>
+			 public 
+			integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_delete">#</a>
+		<code><a href="source-class-DbFacade.DatabaseFacadeAbstract.html#113-121" title="Go to source code">delete</a>( <span>mixed <var>$sql</var></span>, <span>mixed <var>$context</var> = <span class="php-keyword1">array</span>()</span> )</code>
+
+		<div class="description short">
+			
+<p>Executes the given DELETE query and returns the number of affected rows.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Executes the given DELETE query and returns the number of affected rows.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>integer</code><br />
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-DbFacade.DatabaseFacadeInterface.html#_delete">DbFacade\DatabaseFacadeInterface::delete()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="quote" id="_quote">
+
+		<td class="attributes"><code>
+			abstract public 
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_quote">#</a>
+		<code><a href="source-class-DbFacade.DatabaseFacadeAbstract.html#127-134" title="Go to source code">quote</a>( <span>string <var>$str</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Escapes and quotes the given string for using in the database. Should not be
+needed when using prepared statements.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Escapes and quotes the given string for using in the database. Should not be
+needed when using prepared statements.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$str</var></dt>
+					<dd><code>string</code><br>$str</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br />
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-DbFacade.DatabaseFacadeInterface.html#_quote">DbFacade\DatabaseFacadeInterface::quote()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="execute" id="_execute">
+
+		<td class="attributes"><code>
+			abstract public 
+			<code><a href="class-DbFacade.QueryResultAbstract.html">DbFacade\QueryResultAbstract</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_execute">#</a>
+		<code><a href="source-class-DbFacade.DatabaseFacadeAbstract.html#137-143" title="Go to source code">execute</a>( <span>string <var>$str</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Executes the given SQL string.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Executes the given SQL string.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$str</var></dt>
+					<dd><code>string</code><br>$str</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-DbFacade.QueryResultAbstract.html">DbFacade\QueryResultAbstract</a></code></code><br />
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-DbFacade.DatabaseFacadeInterface.html#_execute">DbFacade\DatabaseFacadeInterface::execute()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="affectedRows" id="_affectedRows">
+
+		<td class="attributes"><code>
+			abstract public 
+			integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_affectedRows">#</a>
+		<code><a href="source-class-DbFacade.DatabaseFacadeAbstract.html#146-150" title="Go to source code">affectedRows</a>( )</code>
+
+		<div class="description short">
+			
+<p>Returns the number of affected rows.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns the number of affected rows.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>integer</code><br />
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-DbFacade.DatabaseFacadeInterface.html#_affectedRows">DbFacade\DatabaseFacadeInterface::affectedRows()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getInsertId" id="_getInsertId">
+
+		<td class="attributes"><code>
+			abstract public 
+			integer
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getInsertId">#</a>
+		<code><a href="source-class-DbFacade.DatabaseFacadeAbstract.html#153-157" title="Go to source code">getInsertId</a>( )</code>
+
+		<div class="description short">
+			
+<p>Returns the ID of the last inserted object.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns the ID of the last inserted object.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>integer</code><br />
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-DbFacade.DatabaseFacadeInterface.html#_getInsertId">DbFacade\DatabaseFacadeInterface::getInsertId()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getErrorMsg" id="_getErrorMsg">
+
+		<td class="attributes"><code>
+			abstract public 
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getErrorMsg">#</a>
+		<code><a href="source-class-DbFacade.DatabaseFacadeAbstract.html#166-170" title="Go to source code">getErrorMsg</a>( )</code>
+
+		<div class="description short">
+			
+<p>Returns the last error message.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns the last error message.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="backupConfiguration" id="_backupConfiguration">
+
+		<td class="attributes"><code>
+			abstract public 
+			object
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_backupConfiguration">#</a>
+		<code><a href="source-class-DbFacade.DatabaseFacadeAbstract.html#173-177" title="Go to source code">backupConfiguration</a>( )</code>
+
+		<div class="description short">
+			
+<p>Creates a backup from the current driver configuration.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Creates a backup from the current driver configuration.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>object</code><br>Fluent Interface<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="restoreConfiguration" id="_restoreConfiguration">
+
+		<td class="attributes"><code>
+			abstract public 
+			object
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_restoreConfiguration">#</a>
+		<code><a href="source-class-DbFacade.DatabaseFacadeAbstract.html#180-184" title="Go to source code">restoreConfiguration</a>( )</code>
+
+		<div class="description short">
+			
+<p>Applies the former driver configuration from the backup taken before.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Applies the former driver configuration from the backup taken before.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>object</code><br>Fluent Interface<br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getResult" id="_getResult">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-DbFacade.QueryResultAbstract.html">DbFacade\QueryResultAbstract</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getResult">#</a>
+		<code><a href="source-class-DbFacade.DatabaseFacadeAbstract.html#191-200" title="Go to source code">getResult</a>( )</code>
+
+		<div class="description short">
+			
+<p>Returns the last query result.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns the last query result.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-DbFacade.QueryResultAbstract.html">DbFacade\QueryResultAbstract</a></code></code><br />
+				</div>
+
+
+				<h4>Uses</h4>
+				<div class="list">
+						<code>mixed</code> <br />
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setResult" id="_setResult">
+
+		<td class="attributes"><code>
+			 public 
+			object
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setResult">#</a>
+		<code><a href="source-class-DbFacade.DatabaseFacadeAbstract.html#203-214" title="Go to source code">setResult</a>( <span>mixed <var>$result</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Stores the last query result.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Stores the last query result.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$result</var></dt>
+					<dd><code>mixed</code><br>$result</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>object</code><br>Fluent Interface<br />
+				</div>
+
+
+				<h4>Uses</h4>
+				<div class="list">
+						<code>mixed</code> <br />
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="info" id="_info">
+
+		<td class="attributes"><code>
+			 public 
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_info">#</a>
+		<code><a href="source-class-DbFacade.DatabaseFacadeAbstract.html#217-227" title="Go to source code">info</a>( )</code>
+
+		<div class="description short">
+			
+<p>Return information about the database connection as string.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Return information about the database connection as string.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>string</code><br />
+				</div>
+
+
+				<h4>Uses</h4>
+				<div class="list">
+						<code>mixed</code> <br />
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="debug" id="_debug">
+
+		<td class="attributes"><code>
+			 public 
+			mixed
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_debug">#</a>
+		<code><a href="source-class-DbFacade.DatabaseFacadeAbstract.html#230-248" title="Go to source code">debug</a>( <span>mixed <var>$flag</var> = <span class="php-keyword1">null</span> </span> )</code>
+
+		<div class="description short">
+			
+<p>Returns or sets the debug state of the database connection (pass bool for
+setting, or null for getting).</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns or sets the debug state of the database connection (pass bool for
+setting, or null for getting).</p>
+
+<p>If used as setter, the method should return the object itself to make fluent
+interfaces possible.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$flag</var></dt>
+					<dd><code>mixed</code><br>bool|null</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>mixed</code><br>bool|object Fluent Interface (setter) or debugging state (getter)<br />
+				</div>
+
+
+				<h4>Uses</h4>
+				<div class="list">
+						<code>mixed</code> <br />
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="debug" id="$debug">
+		<td class="attributes"><code>
+			protected  
+			boolean
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-DbFacade.DatabaseFacadeAbstract.html#21-25" title="Go to source code"><var>$debug</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$debug" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Stores the debug status.</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Stores the debug status.</p>
+
+
+					<h4>Used by</h4>
+					<div class="list">
+							<code><code><a href="class-DbFacade.DatabaseFacadeAbstract.html#_debug">DbFacade\DatabaseFacadeAbstract::debug()</a></code></code> <br />
+					</div>
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="connection" id="$connection">
+		<td class="attributes"><code>
+			protected  
+			mixed
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-DbFacade.DatabaseFacadeAbstract.html#27-31" title="Go to source code"><var>$connection</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$connection" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Stores the database connection that enables you speaking to a database</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Stores the database connection that enables you speaking to a database</p>
+
+
+					<h4>Used by</h4>
+					<div class="list">
+							<code><code><a href="class-DbFacade.DatabaseFacadeAbstract.html#_info">DbFacade\DatabaseFacadeAbstract::info()</a></code></code> <br />
+					</div>
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="result" id="$result">
+		<td class="attributes"><code>
+			protected  
+			mixed
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-DbFacade.DatabaseFacadeAbstract.html#33-37" title="Go to source code"><var>$result</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$result" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Stores the last query result</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Stores the last query result</p>
+
+
+					<h4>Used by</h4>
+					<div class="list">
+							<code><code><a href="class-DbFacade.DatabaseFacadeAbstract.html#_getResult">DbFacade\DatabaseFacadeAbstract::getResult()</a></code></code> <br />
+							<code><code><a href="class-DbFacade.DatabaseFacadeAbstract.html#_setResult">DbFacade\DatabaseFacadeAbstract::setResult()</a></code></code> <br />
+					</div>
+			</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		 API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>

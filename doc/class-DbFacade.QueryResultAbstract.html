@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.8.0" />
+
+	<title>Class DbFacade\QueryResultAbstract</title>
+
+	<script type="text/javascript" src="resources/combined.js?1101379305"></script>
+	<script type="text/javascript" src="elementlist.js?789524904"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Namespaces</h3>
+			<ul>
+				<li class="active"><a href="namespace-DbFacade.html">DbFacade</a>
+						</li>
+				<li><a href="namespace-PHP.html">PHP</a>
+						</li>
+			</ul>
+		</div>
+
+		<hr />
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-DbFacade.AdoDbFacade.html">AdoDbFacade</a></li>
+				<li><a href="class-DbFacade.AdoDbQueryResult.html">AdoDbQueryResult</a></li>
+				<li><a href="class-DbFacade.DatabaseFacadeAbstract.html">DatabaseFacadeAbstract</a></li>
+				<li><a href="class-DbFacade.PdoFacade.html">PdoFacade</a></li>
+				<li><a href="class-DbFacade.PdoQueryResult.html">PdoQueryResult</a></li>
+				<li class="active"><a href="class-DbFacade.QueryResultAbstract.html">QueryResultAbstract</a></li>
+			</ul>
+
+			<h3>Interfaces</h3>
+			<ul>
+				<li><a href="class-DbFacade.DatabaseAwareInterface.html">DatabaseAwareInterface</a></li>
+				<li><a href="class-DbFacade.DatabaseFacadeInterface.html">DatabaseFacadeInterface</a></li>
+				<li><a href="class-DbFacade.QueryResultInterface.html">QueryResultInterface</a></li>
+			</ul>
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<input type="text" name="q" class="text" />
+		<input type="submit" value="Search" />
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-DbFacade.html" title="Summary of DbFacade"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class QueryResultAbstract</h1>
+
+
+	<div class="description">
+	
+<p>Abstract query result wrapper, derived from SplQueue. The constructor should
+take whatever the database query returns.</p>
+
+<p>Since result record sets usually are used exactly one time, this SplQue
+objects are set to <code>\SplDoublyLinkedList::IT_MODE_DELETE</code> i.e. after
+using one element it will be deleted.</p>
+
+<p>To retrieve a 'persistent' result set, getRows() returns a clone that does
+not delete elements after access.</p>
+
+	</div>
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+			<a href="class-SplDoublyLinkedList.html"><span>SplDoublyLinkedList</span></a>
+			
+			 implements 
+				<a href="class-Iterator.html"><span>Iterator</span></a>, 
+			
+				<a href="class-Traversable.html"><span>Traversable</span></a>, 
+			
+				<a href="class-Countable.html"><span>Countable</span></a>, 
+			
+				<a href="class-ArrayAccess.html"><span>ArrayAccess</span></a>
+			
+			
+		</dd>
+		<dd style="padding-left:30px">
+			<img src="resources/inherit.png" alt="Extended by" />
+			<a href="class-SplQueue.html"><span>SplQueue</span></a>
+			
+			
+			
+		</dd>
+		<dd style="padding-left:60px">
+			<img src="resources/inherit.png" alt="Extended by" />
+<b><span>DbFacade\QueryResultAbstract</span></b>			
+			 implements 
+				<a href="class-DbFacade.QueryResultInterface.html"><span>DbFacade\QueryResultInterface</span></a>, 
+			
+				<a href="class-Countable.html"><span>Countable</span></a>
+			
+			
+		</dd>
+	</dl>
+
+
+	<div>
+		<h4>Direct known subclasses</h4>
+			<a href="class-DbFacade.AdoDbQueryResult.html">DbFacade\AdoDbQueryResult</a>, 
+			<a href="class-DbFacade.PdoQueryResult.html">DbFacade\PdoQueryResult</a>
+	</div>
+
+
+
+
+
+
+	<div class="info">
+		<b>Abstract</b><br />
+		
+		<b>Namespace:</b> <a href="namespace-DbFacade.html">DbFacade</a><br />
+		
+
+				<b>Author:</b>
+				Carsten Witt &lt;<a
+href="mailto:carsten.witt&#64;gmail.com">carsten.witt&#64;<!---->gmail.com</a>&gt;<br />
+				<b>See:</b>
+				<a
+href="http://www.php.net/manual/en/class.splqueue.php">http://www.php.net/manual/en/class.splqueue.php</a><br />
+				<b>See:</b>
+				<a
+href="http://www.php.net/manual/en/spldoublylinkedlist.setiteratormode.php">http://www.php.net/manual/en/spldoublylinkedlist.setiteratormode.php</a><br />
+		<b>Located at</b> <a href="source-class-DbFacade.QueryResultAbstract.html#7-165" title="Go to source code">DbFacade/QueryResultAbstract.php</a><br />
+	</div>
+
+
+
+	<table class="summary" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-DbFacade.QueryResultAbstract.html#34-51" title="Go to source code">__construct</a>( <span>mixed <var>$result</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Accepts the database drivers last query result and configures the SqlQueue as
+follows:</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Accepts the database drivers last query result and configures the SqlQueue as
+follows:</p>
+
+<ol>
+	<li>Fill SqlQueue with result rows</li>
+
+	<li>Switch iterator mode to \SplDoublyLinkedList::IT_MODE_DELETE.</li>
+</ol>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$result</var></dt>
+					<dd><code>mixed</code><br>Database query result</dd>
+				</dl></div>
+
+
+
+				<h4>Uses</h4>
+				<div class="list">
+						<code><code><a href="class-DbFacade.QueryResultAbstract.html#_setDriverResult">DbFacade\QueryResultAbstract::setDriverResult()</a></code></code> <br />
+						<code><code><a href="class-DbFacade.QueryResultAbstract.html#_populate">DbFacade\QueryResultAbstract::populate()</a></code></code> <br />
+						<code><code><a href="class-SplDoublyLinkedList.html#_setIteratorMode">SplDoublyLinkedList::setIteratorMode()</a></code></code> <br />
+						<code><code><a href="class-SplDoublyLinkedList.html#IT_MODE_DELETE">SplDoublyLinkedList::<b>IT_MODE_DELETE</b></a></code></code> <br />
+				</div>
+				<h4>Used by</h4>
+				<div class="list">
+						<code><code><a href="class-DbFacade.AdoDbQueryResult.html#___construct">DbFacade\AdoDbQueryResult::__construct()</a></code></code> <br />
+						<code><code><a href="class-DbFacade.PdoQueryResult.html#___construct">DbFacade\PdoQueryResult::__construct()</a></code></code> <br />
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="__call" id="___call">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___call">#</a>
+		<code><a href="source-class-DbFacade.QueryResultAbstract.html#57-63" title="Go to source code">__call</a>( <span>mixed <var>$method</var></span>, <span>mixed <var>$arguments</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Delegates every call to non-existent methods to the database result.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Delegates every call to non-existent methods to the database result.</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="__get" id="___get">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___get">#</a>
+		<code><a href="source-class-DbFacade.QueryResultAbstract.html#66-74" title="Go to source code">__get</a>( <span>mixed <var>$field</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Interpretes access to unknown members as fields of the the current result
+row</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Interpretes access to unknown members as fields of the the current result
+row</p>
+
+
+
+
+
+
+				<h4>Uses</h4>
+				<div class="list">
+						<code><code><a href="class-DbFacade.QueryResultAbstract.html#_field">DbFacade\QueryResultAbstract::field()</a></code></code> <br />
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="field" id="_field">
+
+		<td class="attributes"><code>
+			 public 
+			mixed
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_field">#</a>
+		<code><a href="source-class-DbFacade.QueryResultAbstract.html#82-102" title="Go to source code">field</a>( <span>string <var>$field</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Shortcut: returns the field value of the current record, if one exists.
+Otherwise, returns <tt>null</tt>.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Shortcut: returns the field value of the current record, if one exists.
+Otherwise, returns <tt>null</tt>.</p>
+
+<p>This shortcut method prevents things like:<br />
+$result = $database-&gt;query($sql, array(':named' =&gt; $value )); if
+($result-&gt;count()) { $id = $result-&gt;current()-&gt;id } else { $id = null;
+}</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$field</var></dt>
+					<dd><code>string</code><br>$field Field name</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>mixed</code><br />
+				</div>
+
+
+				<h4>Used by</h4>
+				<div class="list">
+						<code><code><a href="class-DbFacade.QueryResultAbstract.html#___get">DbFacade\QueryResultAbstract::__get()</a></code></code> <br />
+				</div>
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-DbFacade.QueryResultInterface.html#_field">DbFacade\QueryResultInterface::field()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getRows" id="_getRows">
+
+		<td class="attributes"><code>
+			 public 
+			<code><a href="class-DbFacade.QueryResultAbstract.html">DbFacade\QueryResultAbstract</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getRows">#</a>
+		<code><a href="source-class-DbFacade.QueryResultAbstract.html#105-116" title="Go to source code">getRows</a>( )</code>
+
+		<div class="description short">
+			
+<p>Returns a cloned QueryResultInterface instance with all records.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns a cloned QueryResultInterface instance with all records.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><code><a href="class-DbFacade.QueryResultAbstract.html">DbFacade\QueryResultAbstract</a></code></code><br />
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-DbFacade.QueryResultInterface.html#_getRows">DbFacade\QueryResultInterface::getRows()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getDriverResult" id="_getDriverResult">
+
+		<td class="attributes"><code>
+			 public 
+			mixed
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getDriverResult">#</a>
+		<code><a href="source-class-DbFacade.QueryResultAbstract.html#119-128" title="Go to source code">getDriverResult</a>( )</code>
+
+		<div class="description short">
+			
+<p>Returns the original query result from the database connection used.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Returns the original query result from the database connection used.</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>mixed</code><br />
+				</div>
+
+
+				<h4>Uses</h4>
+				<div class="list">
+						<code>mixed</code> <br />
+				</div>
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-DbFacade.QueryResultInterface.html#_getDriverResult">DbFacade\QueryResultInterface::getDriverResult()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setDriverResult" id="_setDriverResult">
+
+		<td class="attributes"><code>
+			 public 
+			object
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setDriverResult">#</a>
+		<code><a href="source-class-DbFacade.QueryResultAbstract.html#131-142" title="Go to source code">setDriverResult</a>( <span>mixed <var>$result</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Stores the original query result from the database connection used.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Stores the original query result from the database connection used.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$result</var></dt>
+					<dd><code>mixed</code><br>$result</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>object</code><br>Fluent Interface<br />
+				</div>
+
+
+				<h4>Uses</h4>
+				<div class="list">
+						<code>mixed</code> <br />
+				</div>
+				<h4>Used by</h4>
+				<div class="list">
+						<code><code><a href="class-DbFacade.QueryResultAbstract.html#___construct">DbFacade\QueryResultAbstract::__construct()</a></code></code> <br />
+				</div>
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-DbFacade.QueryResultInterface.html#_setDriverResult">DbFacade\QueryResultInterface::setDriverResult()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="populate" id="_populate">
+
+		<td class="attributes"><code>
+			 public 
+			object
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_populate">#</a>
+		<code><a href="source-class-DbFacade.QueryResultAbstract.html#148-162" title="Go to source code">populate</a>( <span>mixed <var>$result</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Fills the SplQueue with the result from the previoulsy executed DB query.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Fills the SplQueue with the result from the previoulsy executed DB query.</p>
+
+<p>The SplQueue will be rewinded so that the first row is availabe
+immediately.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$result</var></dt>
+					<dd><code>mixed</code><br>$result Anything that can be foreached.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>object</code><br>Fluent Interfaces.<br />
+				</div>
+
+
+				<h4>Used by</h4>
+				<div class="list">
+						<code><code><a href="class-DbFacade.QueryResultAbstract.html#___construct">DbFacade\QueryResultAbstract::__construct()</a></code></code> <br />
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+	<table class="summary inherited">
+	<caption>Methods inherited from <a href="class-SplQueue.html#methods">SplQueue</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-SplQueue.html#_dequeue">dequeue()</a>, 
+			<a href="class-SplQueue.html#_enqueue">enqueue()</a>
+		</code></td>
+	</tr>
+	</table>
+	<table class="summary inherited">
+	<caption>Methods inherited from <a href="class-SplDoublyLinkedList.html#methods">SplDoublyLinkedList</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-SplDoublyLinkedList.html#_bottom">bottom()</a>, 
+			<a href="class-SplDoublyLinkedList.html#_count">count()</a>, 
+			<a href="class-SplDoublyLinkedList.html#_current">current()</a>, 
+			<a href="class-SplDoublyLinkedList.html#_getIteratorMode">getIteratorMode()</a>, 
+			<a href="class-SplDoublyLinkedList.html#_isEmpty">isEmpty()</a>, 
+			<a href="class-SplDoublyLinkedList.html#_key">key()</a>, 
+			<a href="class-SplDoublyLinkedList.html#_next">next()</a>, 
+			<a href="class-SplDoublyLinkedList.html#_offsetExists">offsetExists()</a>, 
+			<a href="class-SplDoublyLinkedList.html#_offsetGet">offsetGet()</a>, 
+			<a href="class-SplDoublyLinkedList.html#_offsetSet">offsetSet()</a>, 
+			<a href="class-SplDoublyLinkedList.html#_offsetUnset">offsetUnset()</a>, 
+			<a href="class-SplDoublyLinkedList.html#_pop">pop()</a>, 
+			<a href="class-SplDoublyLinkedList.html#_prev">prev()</a>, 
+			<a href="class-SplDoublyLinkedList.html#_push">push()</a>, 
+			<a href="class-SplDoublyLinkedList.html#_rewind">rewind()</a>, 
+			<a href="class-SplDoublyLinkedList.html#_setIteratorMode">setIteratorMode()</a>, 
+			<a href="class-SplDoublyLinkedList.html#_shift">shift()</a>, 
+			<a href="class-SplDoublyLinkedList.html#_top">top()</a>, 
+			<a href="class-SplDoublyLinkedList.html#_unshift">unshift()</a>, 
+			<a href="class-SplDoublyLinkedList.html#_valid">valid()</a>
+		</code></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+	<table class="summary inherited">
+	<caption>Constants inherited from <a href="class-SplDoublyLinkedList.html#constants">SplDoublyLinkedList</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-SplDoublyLinkedList.html#IT_MODE_DELETE"><b>IT_MODE_DELETE</b></a>, 
+			<a href="class-SplDoublyLinkedList.html#IT_MODE_FIFO"><b>IT_MODE_FIFO</b></a>, 
+			<a href="class-SplDoublyLinkedList.html#IT_MODE_KEEP"><b>IT_MODE_KEEP</b></a>, 
+			<a href="class-SplDoublyLinkedList.html#IT_MODE_LIFO"><b>IT_MODE_LIFO</b></a>
+		</code></td>
+	</tr>
+	</table>
+
+
+
+	<table class="summary" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="result" id="$result">
+		<td class="attributes"><code>
+			public  
+			mixed
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-DbFacade.QueryResultAbstract.html#27-30" title="Go to source code"><var>$result</var></a>
+		</td>
+		<td class="value"><code></code></td>
+		<td class="description"><div>
+			<a href="#$result" class="anchor">#</a>
+
+			<div class="description short">
+				
+<p>Database driver query result</p>
+
+			</div>
+
+			<div class="description detailed hidden">
+				
+<p>Database driver query result</p>
+
+
+					<h4>Used by</h4>
+					<div class="list">
+							<code><code><a href="class-DbFacade.QueryResultAbstract.html#_getDriverResult">DbFacade\QueryResultAbstract::getDriverResult()</a></code></code> <br />
+							<code><code><a href="class-DbFacade.QueryResultAbstract.html#_setDriverResult">DbFacade\QueryResultAbstract::setDriverResult()</a></code></code> <br />
+					</div>
+			</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		 API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>
