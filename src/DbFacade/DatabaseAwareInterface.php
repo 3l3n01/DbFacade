@@ -1,8 +1,6 @@
 <?php
 namespace DbFacade;
 
-use \DbFacade\DatabaseFacadeInterface;
-
 
 /**
  * @author Carsten Witt <carsten.witt@germania-kg.de>

@@ -1,9 +1,6 @@
 <?php
 namespace DbFacade;
 
-use \DbFacade\QueryResultInterface;
-
-
 
 /**
  * Methods to provide simplified access to the results of DB queries.
