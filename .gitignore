@@ -5,6 +5,7 @@ vendor
 composer.lock
 docs
 doc
+phpdoc.xml
 
 
 
