@@ -146,6 +146,10 @@ implements QueryResultInterface, \Countable
 
 
 /**
+ * Fills the SplQueue with the result from the previoulsy executed DB query.
+ *
+ * The SplQueue will be rewinded so that the first row is availabe immediately.
+ *
  * @param mixed   $result Anything that can be foreached.
  * @return object Fluent Interfaces.
  */
