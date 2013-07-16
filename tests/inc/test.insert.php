@@ -1,6 +1,8 @@
 <?php
 namespace DbFacade\Tests;
 
+#require_once '../config.php';
+
 foreach($facades as $index => $facade):
 
 echo "<h4>", get_class($facade), "</h4>\n";
@@ -19,8 +21,6 @@ for ($i = 0; $i < $max; $i++):
     echo $insert_id, " ";
 endfor;
 echo "</pre>";
-
-
 
 
 endforeach;

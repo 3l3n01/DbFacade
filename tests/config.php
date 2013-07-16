@@ -29,3 +29,8 @@ $pdo_adapter      = DatabaseFacadeAbstract::factory($pdo_mysql_conn);
 
 $facades = array($adodb_adapter, $pdo_adapter);
 
+if ($pdo_adapter->read('SELECT COUNT(*) AS count FROM words WHERE 1')->count) {
+    $pdo_adapter->execute('TRUNCATE TABLE words');
+}
+
+

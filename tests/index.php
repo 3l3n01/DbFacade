@@ -20,9 +20,9 @@ require_once 'inc/html.intro.php';
 <ul class="nav nav-tabs">
     <li class="active"><a href="#overview" data-toggle="tab">Overview</a></li>
     <li><a href="#instantiate" data-toggle="tab">Instantiation</a></li>
+    <li><a href="#insert" data-toggle="tab">INSERT</a></li>
     <li><a href="#select" data-toggle="tab">SELECT</a></li>
     <li><a href="#fields" data-toggle="tab">Fields</a></li>
-    <li><a href="#insert" data-toggle="tab">INSERT</a></li>
     <li><a href="#update" data-toggle="tab">UPDATE</a></li>
     <li><a href="#delete" data-toggle="tab">DELETE</a></li>
 </ul>
@@ -41,6 +41,17 @@ require_once 'inc/html.intro.php';
 <div class="tab-pane" id="instantiate">
 <?php require_once 'inc/inc.instantiate.php'; ?>
 </div> <!-- /.tab-pane -->
+
+
+<div class="tab-pane" id="insert">
+<p class="lead">The <code>create</code> method returns the last inserted ID as <code>integer</code> value.</p>
+
+<?php
+require_once 'inc/test.insert.php';
+?>
+</div>
+
+
 
 
 
@@ -63,16 +74,6 @@ Your first row is automatically available. You may access certain fields via met
 
 <?php
 require_once 'inc/test.select.access.php';
-?>
-</div>
-
-
-
-<div class="tab-pane" id="insert">
-<p class="lead">The <code>create</code> method returns the last inserted ID as <code>integer</code> value.</p>
-
-<?php
-require_once 'inc/test.insert.php';
 ?>
 </div>
 

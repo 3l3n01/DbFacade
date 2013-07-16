@@ -1,14 +1,17 @@
 <?php
 namespace DbFacade\Tests;
 
+#require_once '../config.php';
+
 foreach($facades as $index => $facade):
 
 echo "<h4>", get_class($facade), "</h4>\n";
 
-$delete = 'DELETE FROM words WHERE id > (:newest - 7)';
+$delete = 'DELETE FROM words WHERE id > :threshold
+LIMIT 7';
 
 pretty_print('$gone = $facade->delete( "'.$delete.'", array(
-    ":newest" => $insert_id
+    ":threshold" => 10
 ));
 var_dump( $gone );
 
@@ -17,10 +20,12 @@ var_dump( $gone );
 
 
 $gone = $facade->delete( $delete, array(
-    ':newest' => $insert_id
-) );
-echo pre_dump($gone);
+    ':threshold' => 10
+));
 
+echo "<pre>";
+print_r($gone);
+echo "</pre>";
 
 
 
