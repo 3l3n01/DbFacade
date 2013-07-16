@@ -2,6 +2,7 @@
 .AppleDouble
 .htaccess
 vendor
+composer.lock
 
 
 
