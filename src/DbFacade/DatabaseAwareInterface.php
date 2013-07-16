@@ -3,6 +3,8 @@ namespace DbFacade;
 
 
 /**
+ * Methods for enabling work with DbFacade.
+ *
  * @author Carsten Witt <carsten.witt@germania-kg.de>
  */
 interface DatabaseAwareInterface
@@ -19,6 +21,8 @@ interface DatabaseAwareInterface
 
 
 /**
+ * Returns the DbFacade instance.
+ *
  * @return DatabaseFacadeInterface
  * @throws RuntimeException
  */

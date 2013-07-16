@@ -30,7 +30,7 @@ interface QueryResultInterface
     public function getRows();
 
 
-/*
+/**
  * Stores the original query result from the database connection used.
  *
  * @param  mixed $result
