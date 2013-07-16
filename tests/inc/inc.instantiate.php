@@ -10,6 +10,7 @@ to get your personal facade concretion.
 If you pass something that the factory method can not cope with,
 an <code>\InvalidArgumentException</code> will tell you.</p>
 
+<h4>In a nutshell</h4>
 <?php
 pretty_print('&lt;?php
 namespace \MyApp;
