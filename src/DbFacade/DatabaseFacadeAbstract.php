@@ -77,6 +77,8 @@ implements DatabaseFacadeInterface
 
 
 /**
+ * Executes the given INSERT query and returns the last insert ID.
+ *
  * @return int Last insert ID
  */
     public function create($sql, $context = array())
@@ -86,8 +88,8 @@ implements DatabaseFacadeInterface
     }
 
 /**
- * Returns the SELECT query result
- * as concretion of QueryResultAbstract
+ * Executes the given SELECT query and returns a concretion
+ * of QueryResultAbstract that carries the results.
  *
  * @return QueryResultAbstract
  */
@@ -98,7 +100,7 @@ implements DatabaseFacadeInterface
 
 
 /**
- * Returns the number of affected rows.
+ * Executes the given UPDATE query and returns the number of affected rows.
  * @return int
  */
     public function update($sql, $context = array())
@@ -109,7 +111,7 @@ implements DatabaseFacadeInterface
 
 
 /**
- * Returns the number of affected rows.
+ * Executes the given DELETE query and returns the number of affected rows.
  * @return int
  */
     public function delete($sql, $context = array())
