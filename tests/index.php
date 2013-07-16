@@ -18,162 +18,70 @@ require_once 'inc/html.intro.php';
     <p>DbFacade provides a simple method API.</p>
 </div>
 
-<hr />
-<h2>Overview</h2>
 
-<dl>
-    <dt>SELECT</dt>
-    <dd>
-    <pre class="prettyprint linenums">
-// returns concretion of \DbFacade\QueryResultAbstract
-$records = $facade->read( 'SELECT * FROM words WHERE id = :what', array(
-    ':what' => $search
-));
-</pre>
-    </dd>
-    <dt>CREATE</dt>
-    <dd><pre class="prettyprint linenums">
-// returns last insert ID
-$new_id = $facade->create( 'INSERT INTO words (word) VALUES (:new)', array(
-    ':new' => "Foo"
-));
-</pre>
-    </dd>
-    <dt>UDPATE</dt>
-    <dd><pre class="prettyprint linenums">
-// returns number of affected rows
-$affected = $facade->update( 'UPDATE words SET word = :value WHERE 1', array(
-    ':value' => "Bar"
-));
-</pre>
-    </dd>
-    <dt>DELETE</dt>
-    <dd><pre class="prettyprint linenums">
-// returns number of affected rows
-$gone = $facade->delete( 'DELETE FROM words WHERE id = :vanish', array(
-    ':vanish' => $id
-));
-</pre>
-    </dd>
-</dl>
-
-<h2>Instantiation</h2>
-<p>Let's say you've got a <code>PDOConnection</code> or <code>ADOConnection</code> object.
-To get your concretion of <tt>DatabaseFacadeAbstract</tt>, simply pass to the <code>factory</code> method.
-If you pass something that <samp>factory</samp> can not cope with,
-an <samp>\InvalidArgumentException</samp> will tell you.</p>
-
-<?php
-pretty_print('&lt;?php
-namespace \MyApp;
-use \DbFacade\DatabaseFacadeAbstract;
-
-// $pdo_mysql_conn: Any PDOConnection
-$facade = DatabaseFacadeAbstract::factory( $pdo_mysql_conn );
-echo get_class( $facade ); // DbFacade\PdoFacade
-
-// $ado_mysql_conn: Any ADOConnection
-$facade = DatabaseFacadeAbstract::factory( $ado_mysql_conn );
-echo get_class( $facade ); // DbFacade\AdoDbFacade
-?&gt;');
-?>
-
-
-
-<p>DbFacade in test:</p>
-<ul>
-<?php
-foreach($facades as $index => $facade):
-    echo '<li><a href="#', $index, '">', get_class($facade), "</a></li>\n";
-endforeach;
-?>
+<ul class="nav nav-tabs">
+    <li class="active"><a href="#overview" data-toggle="tab">Overview</a></li>
+    <li><a href="#instantiate" data-toggle="tab">Instantiation</a></li>
+    <li><a href="#select" data-toggle="tab">SELECT</a></li>
+    <li><a href="#insert" data-toggle="tab">INSERT</a></li>
+    <li><a href="#update" data-toggle="tab">UPDATE</a></li>
+    <li><a href="#delete" data-toggle="tab">DELETE</a></li>
 </ul>
 
+
+<div class="tab-content">
+
+
+
+<div class="tab-pane active" id="overview">
+<?php require_once 'inc/inc.overview.php'; ?>
+</div> <!-- /.tab-pane -->
+
+<div class="tab-pane" id="instantiate">
+<?php require_once 'inc/inc.instantiate.php'; ?>
+</div> <!-- /.tab-pane -->
+
+
+
+<div class="tab-pane" id="select">
+
+<p class="lead">The <code>read</code> method returns a concretion of <code>\DbFacade\QueryResultAbstract</code>
+which itself is derived from <code>\SplQueue</code><br />
+The result object consists of <code>StdClass</code> objects.</p>
+
 <?php
-foreach($facades as $index => $facade):
-echo '<h2 id="' . $index . '">', get_class($facade), "</h2>\n";
-
-try {  // ================= Testing area ====================
-
+require_once 'inc/test.select.php';
+?>
+</div>
 
 
-echo "<h3>Selects</h3>\n";
+<div class="tab-pane" id="insert">
+<p class="lead">The <code>create</code> method returns the last inserted ID as <code>integer</code> value.</p>
 
-$select = 'SELECT
-*
-FROM words
-WHERE 1
-LIMIT 4';
-
-pretty_print($select);
-
-$words = $facade->read( $select );
-echo "<pre>";
-foreach($words as $w) { print_r( $w ); }
-echo "</pre>";
-echo "<hr>";
+<?php
+require_once 'inc/test.insert.php';
+?>
+</div>
 
 
+<div class="tab-pane" id="update">
+<p class="lead">The <code>update</code> method returns the number of affected rows as <code>integer</code> value.</p>
+<?php
+require_once 'inc/test.update.php';
+?>
+</div>
 
 
-echo "<h3>Inserts</h3>\n";
-$max = 10;
-$insert = 'INSERT INTO words
-( word )
-VALUES
-( :word )';
+<div class="tab-pane" id="delete">
+<p class="lead">The <code>delete</code> method returns the number of affected rows as <code>integer</code> value.</p>
+<?php
+require_once 'inc/test.delete.php';
+?>
+</div>
 
-echo "Running ", $max, " &times ";
-pretty_print( $insert );
+<?php
 
-echo "<pre>";
-for ($i = 0; $i < 10; $i++):
-    $insert_id = $facade->create( $insert, array(
-        ':word' => "Hallo"
-    ));
-    echo $insert_id, " ";
-endfor;
-echo "</pre>";
-echo "<hr>";
-
-
-
-
-
-echo "<h3>Updates</h3>\n";
-$update = 'UPDATE words
-SET random = RAND()
-WHERE id BETWEEN 3 and 7';
-
-pretty_print( $update );
-
-$result = $facade->update( $update);
-echo "<pre>";
-var_dump($result);
-echo "</pre>";
-echo "<hr>";
-
-
-
-
-echo "<h3>Deletions</h3>\n";
-$delete = 'DELETE FROM words
-WHERE id > (:newest - 5)
-LIMIT 3';
-
-pretty_print( $delete );
-
-$result = $facade->delete( $delete, array(
-    ':newest' => $insert_id
-) );
-echo "<pre>";
-var_dump($result);
-echo "</pre>";
-echo "<hr>";
-
-
-
-// ================= Catching testing exceptions  ====================
+/*// ================= Catching testing exceptions  ====================
 }
 catch (\Exception $e) {
     echo '<div class="exception"><b>', get_class($e), ": </b>",
@@ -181,7 +89,10 @@ catch (\Exception $e) {
     $e->getTraceAsString(),
     "</div><!-- /.exception -->\n";
 }
+*/
+?>
 
-endforeach; // Facedes foreach
+</div> <!-- /.tab-content -->
 
+<?php
 require_once 'inc/html.outro.php';

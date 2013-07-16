@@ -7,20 +7,21 @@
 
 namespace DbFacade\Tests;
 
-use \RuntimeException;
+
 
 function pre_r($var)
 {
     return '<pre>' . print_r($var, "noecho") . "</pre>\n";
 }
 
+
 function pre_dump($var)
 {
     ob_start();
     var_dump($var);
-
     return '<pre>' . ob_get_clean() . "</pre>\n";
 }
+
 
 
 function pretty($code)
@@ -65,43 +66,40 @@ function codeBox($content = '', $code='', $echo = true)
 
 
 
-function getLabel($label, $type="")
-{
-	return '<span class="'.$type.' label">'.$label.'</span>';
-}
-
-
-function getObjectLabel($label, $type="object")
-{
-	return getLabel($label, $type);
-}
-
-
-
 
 /**
  * @return \PDO
+ * @throws \LogicException
  */
 function getPdoConnection($db_driver, $db_host, $db_name, $db_user, $db_pass, $charset = 'utf8', $persistent = true)
 {
+    if (!class_exists('\PDO')) {
+        throw new \LogicException("Class \PDO does not exist, is ADOdb loaded?");
+    }
     return new \PDO("$db_driver:host=$db_host;dbname=$db_name", $db_user, $db_pass);
 }
 
 
 /**
  * @return \ADOConnection
+ * @throws \LogicException
+ * @throws \RuntimeException
  */
 function getDatabaseADOConnection($db_driver, $db_host, $db_name, $db_user, $db_pass, $charset = 'utf8', $persistent = true)
 {
-        $db = \ADONewConnection($db_driver);
+    if (!function_exists('ADONewConnection')) {
+        throw new \LogicException("Function \ADONewConnection does not exist, is ADOdb loaded?");
+    }
 
-        if (!$connecting = $persistent
-        ? $db->PConnect($db_host, $db_user, $db_pass, $db_name)
-        : $db->Connect($db_host, $db_user, $db_pass, $db_name)) {
-            throw new \RuntimeException("Connectiong to Database failed.");
-        }
+    $db = \ADONewConnection($db_driver);
 
-        $db->Execute("set names '" .$charset. "'");
+    if (!$connecting = $persistent
+    ? $db->PConnect($db_host, $db_user, $db_pass, $db_name)
+    : $db->Connect($db_host, $db_user, $db_pass, $db_name)) {
+        throw new \RuntimeException("Connection to database failed.");
+    }
 
-        return $db;
+    $db->Execute("set names '" .$charset. "'");
+
+    return $db;
 }

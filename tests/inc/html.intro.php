@@ -13,6 +13,11 @@
 <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap-responsive.css" rel="stylesheet">
 <link href="http://twitter.github.com/bootstrap/assets/css/docs.css" rel="stylesheet">
 
+<style type="text/css">
+	h3 {
+		margin-top: 30px;
+	}
+</style>
 </head>
 
 <body>
