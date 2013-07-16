@@ -3,6 +3,7 @@
 .htaccess
 vendor
 composer.lock
+docs
 
 
 
