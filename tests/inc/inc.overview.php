@@ -4,7 +4,7 @@ namespace DbFacade\Tests;
 
 <p class="lead">DbFacade provides a CRUD-like method API.
 Its methods are <code>create</code>, <code>read</code>, <code>udpate</code> and <code>delete</code>.<br/>
-Simply pass an SQL string, optionally with named parameters and an context array that holds the parameter values.</p>
+Simply pass an SQL <code>string</code>, optionally with named parameters and an context <code>array</code> with parameter values.</p>
 
 
 <h5>CREATE / INSERT</h5>

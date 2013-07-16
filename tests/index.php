@@ -8,16 +8,14 @@ require_once 'inc/html.intro.php';
 </div>
 
 <div class="lead">
-    <p>When talking to databases, this is what we are after:</p>
-    <ul>
-    <li>When you <code>SELECT</code> something, you are interested in records.</li>
-    <li>After <code>INSERTING</code>, it's the new ID you are after,</li>
-    <li>when <code>UPDATE</code>ing or <code>DELETE</code>ing, the number of affected rows.</li>
-    </ul>
-
-    <p>DbFacade provides a simple method API.</p>
+    <p><strong>When talking to databases, this is what we are really after:</strong><br>
+    When you <code>SELECT</code> something, you are interested in rows.<br>
+    After <code>INSERTING</code>, it's the new ID you are after.<br>
+    When <code>UPDATE</code>ing or <code>DELETE</code>ing, the number of affected rows.</p>
 </div>
 
+
+<h2>Get started</h2>
 
 <ul class="nav nav-tabs">
     <li class="active"><a href="#overview" data-toggle="tab">Overview</a></li>

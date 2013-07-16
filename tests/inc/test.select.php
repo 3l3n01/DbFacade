@@ -22,6 +22,4 @@ foreach($words as $one_word) { print_r( $one_word ); }
 echo "</pre>";
 
 
-
-
 endforeach;
