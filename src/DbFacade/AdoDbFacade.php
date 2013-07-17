@@ -13,7 +13,8 @@ use \DbFacade\AdoDbQueryResult;
 /**
  * ADOdb facade
  *
- * @author Carsten Witt <carsten.witt@germania-kg.de>
+ * @package Facades
+ * @author  Carsten Witt <carsten.witt@gmail.com>
  */
 class AdoDbFacade extends DatabaseFacadeAbstract
 implements DatabaseFacadeInterface
@@ -169,8 +170,9 @@ implements DatabaseFacadeInterface
 
 
 /**
- * Prepares the given SQL string. Pass an associative array with
- * named paramters as keys and values.
+ * Prepares and returns the given SQL string.
+ *
+ * Optionally, pass an associative array with named paramters as keys and values.
  *
  * @param  string $sql     SQL string, optionally with named parameters
  * @param  array  $context The named parameters and values, default empty

@@ -4,6 +4,9 @@ namespace DbFacade;
 
 /**
  * Methods the Database wrapper instances must provide
+ *
+ * @package Facades
+ * @author  Carsten Witt <carsten.witt@gmail.com>
  */
 interface DatabaseFacadeInterface
 {

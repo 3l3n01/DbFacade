@@ -12,7 +12,8 @@ use \PDO;
 /**
  * PDO facade
  *
- * @author Carsten Witt <carsten.witt@germania-kg.de>
+ * @package Facades
+ * @author  Carsten Witt <carsten.witt@gmail.com>
  */
 class PdoFacade extends DatabaseFacadeAbstract
 implements DatabaseFacadeInterface

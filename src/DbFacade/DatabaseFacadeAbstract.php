@@ -11,7 +11,8 @@ use \InvalidArgumentException;
 /**
  * Abstract database wrapper
  *
- * @author Carsten Witt <carsten.witt@germania-kg.de>
+ * @package Facades
+ * @author  Carsten Witt <carsten.witt@gmail.com>
  */
 abstract class DatabaseFacadeAbstract
 implements DatabaseFacadeInterface
