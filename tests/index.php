@@ -7,6 +7,8 @@ require_once 'inc/html.intro.php';
   <h1>DbFacade <small>gives you what you are really interested in</small></h1>
 </div>
 
+<a href="https://github.com/tomkyle/DbFacade"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png" alt="Fork me on GitHub"></a>
+
 <div class="lead">
     <p><strong>When talking to databases, this is what we are really after:</strong><br>
     When you <code>SELECT</code> something, you are interested in rows.<br>
