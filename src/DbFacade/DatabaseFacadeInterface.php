@@ -3,7 +3,7 @@ namespace DbFacade;
 
 
 /**
- * Methods the Database wrapper instances must provide
+ * Methods the facade concretions must provide.
  *
  * @package Facades
  * @author  Carsten Witt <carsten.witt@gmail.com>
