@@ -10,7 +10,8 @@ use \InvalidArgumentException;
 /**
  * PDO query result wrapper for PDOStatement objects.
  *
- * @author Carsten Witt <carsten.witt@gmail.com>
+ * @package QueryResults
+ * @author  Carsten Witt <carsten.witt@gmail.com>
  */
 class PdoQueryResult extends QueryResultAbstract
 implements QueryResultInterface

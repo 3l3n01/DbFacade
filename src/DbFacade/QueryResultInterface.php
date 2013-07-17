@@ -5,7 +5,8 @@ namespace DbFacade;
 /**
  * Methods to provide simplified access to the results of DB queries.
  *
- * @author Carsten Witt <carsten.witt@gmail.com>
+ * @package QueryResults
+ * @author  Carsten Witt <carsten.witt@gmail.com>
  */
 interface QueryResultInterface
 {

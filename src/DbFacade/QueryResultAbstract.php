@@ -15,10 +15,11 @@ use \DbFacade\QueryResultInterface;
  * To retrieve a 'persistent' result set, getRows() returns a clone
  * that does not delete elements after access.
  *
- * @see http://www.php.net/manual/en/class.splqueue.php
- * @see http://www.php.net/manual/en/spldoublylinkedlist.setiteratormode.php
+ * @see http://www.php.net/manual/en/class.splqueue.php SQlQueue in PHP manual
+ * @see http://www.php.net/manual/en/spldoublylinkedlist.setiteratormode.php SplDoublyLinkedList::setIteratorMode in PHP manual
  *
- * @author Carsten Witt <carsten.witt@gmail.com>
+ * @package QueryResults
+ * @author  Carsten Witt <carsten.witt@gmail.com>
  */
 abstract class QueryResultAbstract extends \SplQueue
 implements QueryResultInterface, \Countable

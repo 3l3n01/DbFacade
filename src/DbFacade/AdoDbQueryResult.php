@@ -8,9 +8,10 @@ use \InvalidArgumentException;
 
 
 /**
- * ADOdb query result wrapper for ADORecordSet objects.
+ * ADOdb result wrapper for ADORecordSet objects.
  *
- * @author Carsten Witt <carsten.witt@gmail.com>
+ * @package QueryResults
+ * @author  Carsten Witt <carsten.witt@gmail.com>
  */
 class AdoDbQueryResult extends QueryResultAbstract
 implements QueryResultInterface

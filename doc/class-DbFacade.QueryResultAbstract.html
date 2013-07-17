@@ -4,10 +4,10 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="generator" content="ApiGen 2.8.0" />
 
-	<title>Class DbFacade\QueryResultAbstract</title>
+	<title>Class DbFacade\QueryResultAbstract | tomkyle/DbFacade</title>
 
-	<script type="text/javascript" src="resources/combined.js?1101379305"></script>
-	<script type="text/javascript" src="elementlist.js?789524904"></script>
+	<script type="text/javascript" src="resources/combined.js?2029070567"></script>
+	<script type="text/javascript" src="elementlist.js?3365695744"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 
 </head>
@@ -116,7 +116,9 @@ not delete elements after access.</p>
 			
 				<a href="class-Countable.html"><span>Countable</span></a>, 
 			
-				<a href="class-ArrayAccess.html"><span>ArrayAccess</span></a>
+				<a href="class-ArrayAccess.html"><span>ArrayAccess</span></a>, 
+			
+				<a href="class-Serializable.html"><span>Serializable</span></a>
 			
 			
 		</dd>
@@ -155,18 +157,20 @@ not delete elements after access.</p>
 		<b>Abstract</b><br />
 		
 		<b>Namespace:</b> <a href="namespace-DbFacade.html">DbFacade</a><br />
-		
+		<b>Package:</b> QueryResults<br />
 
 				<b>Author:</b>
 				Carsten Witt &lt;<a
 href="mailto:carsten.witt&#64;gmail.com">carsten.witt&#64;<!---->gmail.com</a>&gt;<br />
 				<b>See:</b>
 				<a
-href="http://www.php.net/manual/en/class.splqueue.php">http://www.php.net/manual/en/class.splqueue.php</a><br />
+href="http://www.php.net/manual/en/class.splqueue.php">http://www.php.net/manual/en/class.splqueue.php</a>
+SQlQueue in PHP manual<br />
 				<b>See:</b>
 				<a
-href="http://www.php.net/manual/en/spldoublylinkedlist.setiteratormode.php">http://www.php.net/manual/en/spldoublylinkedlist.setiteratormode.php</a><br />
-		<b>Located at</b> <a href="source-class-DbFacade.QueryResultAbstract.html#7-165" title="Go to source code">DbFacade/QueryResultAbstract.php</a><br />
+href="http://www.php.net/manual/en/spldoublylinkedlist.setiteratormode.php">http://www.php.net/manual/en/spldoublylinkedlist.setiteratormode.php</a>
+SplDoublyLinkedList::setIteratorMode in PHP manual<br />
+		<b>Located at</b> <a href="source-class-DbFacade.QueryResultAbstract.html#7-166" title="Go to source code">DbFacade/QueryResultAbstract.php</a><br />
 	</div>
 
 
@@ -184,7 +188,7 @@ href="http://www.php.net/manual/en/spldoublylinkedlist.setiteratormode.php">http
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-DbFacade.QueryResultAbstract.html#34-51" title="Go to source code">__construct</a>( <span>mixed <var>$result</var></span> )</code>
+		<code><a href="source-class-DbFacade.QueryResultAbstract.html#35-52" title="Go to source code">__construct</a>( <span>mixed <var>$result</var></span> )</code>
 
 		<div class="description short">
 			
@@ -242,7 +246,7 @@ follows:</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#___call">#</a>
-		<code><a href="source-class-DbFacade.QueryResultAbstract.html#57-63" title="Go to source code">__call</a>( <span>mixed <var>$method</var></span>, <span>mixed <var>$arguments</var></span> )</code>
+		<code><a href="source-class-DbFacade.QueryResultAbstract.html#58-64" title="Go to source code">__call</a>( <span>mixed <var>$method</var></span>, <span>mixed <var>$arguments</var></span> )</code>
 
 		<div class="description short">
 			
@@ -275,7 +279,7 @@ follows:</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#___get">#</a>
-		<code><a href="source-class-DbFacade.QueryResultAbstract.html#66-74" title="Go to source code">__get</a>( <span>mixed <var>$field</var></span> )</code>
+		<code><a href="source-class-DbFacade.QueryResultAbstract.html#67-75" title="Go to source code">__get</a>( <span>mixed <var>$field</var></span> )</code>
 
 		<div class="description short">
 			
@@ -314,7 +318,7 @@ row</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_field">#</a>
-		<code><a href="source-class-DbFacade.QueryResultAbstract.html#82-102" title="Go to source code">field</a>( <span>string <var>$field</var></span> )</code>
+		<code><a href="source-class-DbFacade.QueryResultAbstract.html#83-103" title="Go to source code">field</a>( <span>string <var>$field</var></span> )</code>
 
 		<div class="description short">
 			
@@ -369,7 +373,7 @@ $result = $database-&gt;query($sql, array(':named' =&gt; $value )); if
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getRows">#</a>
-		<code><a href="source-class-DbFacade.QueryResultAbstract.html#105-116" title="Go to source code">getRows</a>( )</code>
+		<code><a href="source-class-DbFacade.QueryResultAbstract.html#106-117" title="Go to source code">getRows</a>( )</code>
 
 		<div class="description short">
 			
@@ -408,7 +412,7 @@ $result = $database-&gt;query($sql, array(':named' =&gt; $value )); if
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getDriverResult">#</a>
-		<code><a href="source-class-DbFacade.QueryResultAbstract.html#119-128" title="Go to source code">getDriverResult</a>( )</code>
+		<code><a href="source-class-DbFacade.QueryResultAbstract.html#120-129" title="Go to source code">getDriverResult</a>( )</code>
 
 		<div class="description short">
 			
@@ -451,7 +455,7 @@ $result = $database-&gt;query($sql, array(':named' =&gt; $value )); if
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setDriverResult">#</a>
-		<code><a href="source-class-DbFacade.QueryResultAbstract.html#131-142" title="Go to source code">setDriverResult</a>( <span>mixed <var>$result</var></span> )</code>
+		<code><a href="source-class-DbFacade.QueryResultAbstract.html#132-143" title="Go to source code">setDriverResult</a>( <span>mixed <var>$result</var></span> )</code>
 
 		<div class="description short">
 			
@@ -503,7 +507,7 @@ $result = $database-&gt;query($sql, array(':named' =&gt; $value )); if
 
 		<td class="name"><div>
 		<a class="anchor" href="#_populate">#</a>
-		<code><a href="source-class-DbFacade.QueryResultAbstract.html#148-162" title="Go to source code">populate</a>( <span>mixed <var>$result</var></span> )</code>
+		<code><a href="source-class-DbFacade.QueryResultAbstract.html#149-163" title="Go to source code">populate</a>( <span>mixed <var>$result</var></span> )</code>
 
 		<div class="description short">
 			
@@ -571,9 +575,11 @@ immediately.</p>
 			<a href="class-SplDoublyLinkedList.html#_prev">prev()</a>, 
 			<a href="class-SplDoublyLinkedList.html#_push">push()</a>, 
 			<a href="class-SplDoublyLinkedList.html#_rewind">rewind()</a>, 
+			<a href="class-SplDoublyLinkedList.html#_serialize">serialize()</a>, 
 			<a href="class-SplDoublyLinkedList.html#_setIteratorMode">setIteratorMode()</a>, 
 			<a href="class-SplDoublyLinkedList.html#_shift">shift()</a>, 
 			<a href="class-SplDoublyLinkedList.html#_top">top()</a>, 
+			<a href="class-SplDoublyLinkedList.html#_unserialize">unserialize()</a>, 
 			<a href="class-SplDoublyLinkedList.html#_unshift">unshift()</a>, 
 			<a href="class-SplDoublyLinkedList.html#_valid">valid()</a>
 		</code></td>
@@ -610,7 +616,7 @@ immediately.</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-DbFacade.QueryResultAbstract.html#27-30" title="Go to source code"><var>$result</var></a>
+				<a href="source-class-DbFacade.QueryResultAbstract.html#28-31" title="Go to source code"><var>$result</var></a>
 		</td>
 		<td class="value"><code></code></td>
 		<td class="description"><div>
@@ -645,7 +651,7 @@ immediately.</p>
 </div>
 
 	<div id="footer">
-		 API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+		tomkyle/DbFacade API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
 	</div>
 </div>
 </div>

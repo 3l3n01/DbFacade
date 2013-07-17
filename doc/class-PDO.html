@@ -4,10 +4,10 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="generator" content="ApiGen 2.8.0" />
 
-	<title>Class PDO</title>
+	<title>Class PDO | tomkyle/DbFacade</title>
 
-	<script type="text/javascript" src="resources/combined.js?1101379305"></script>
-	<script type="text/javascript" src="elementlist.js?789524904"></script>
+	<script type="text/javascript" src="resources/combined.js?2029070567"></script>
+	<script type="text/javascript" src="elementlist.js?3365695744"></script>
 	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 
 </head>
@@ -45,6 +45,7 @@
 				<li><a href="class-ArrayAccess.html">ArrayAccess</a></li>
 				<li><a href="class-Countable.html">Countable</a></li>
 				<li><a href="class-Iterator.html">Iterator</a></li>
+				<li><a href="class-Serializable.html">Serializable</a></li>
 				<li><a href="class-Traversable.html">Traversable</a></li>
 			</ul>
 
@@ -162,7 +163,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_prepare">#</a>
-		<code><a href="http://php.net/manual/pdo.prepare.php" title="Go to PHP documentation">prepare</a>( <span>mixed <var>$statment</var></span>, <span>mixed <var>$options</var></span> )</code>
+		<code><a href="http://php.net/manual/pdo.prepare.php" title="Go to PHP documentation">prepare</a>( <span>mixed <var>$statement</var></span>, <span>mixed <var>$options</var></span> )</code>
 
 		<div class="description short">
 			
@@ -2090,13 +2091,73 @@
 			</div>
 		</div></td>
 	</tr>
+	<tr data-order="MYSQL_ATTR_MAX_BUFFER_SIZE" id="MYSQL_ATTR_MAX_BUFFER_SIZE">
+
+		<td class="attributes"><code>integer</code></td>
+		<td class="name"><code>
+				<a href="http://php.net/manual/class.pdo.php#pdo.constants.mysql-attr-max-buffer-size" title="Go to PHP documentation"><b>MYSQL_ATTR_MAX_BUFFER_SIZE</b></a>
+		</code></td>
+		<td class="value"><code><span class="php-num">1005</span></code></td>
+		<td class="description"><div>
+			<a href="#MYSQL_ATTR_MAX_BUFFER_SIZE" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="MYSQL_ATTR_READ_DEFAULT_FILE" id="MYSQL_ATTR_READ_DEFAULT_FILE">
+
+		<td class="attributes"><code>integer</code></td>
+		<td class="name"><code>
+				<a href="http://php.net/manual/class.pdo.php#pdo.constants.mysql-attr-read-default-file" title="Go to PHP documentation"><b>MYSQL_ATTR_READ_DEFAULT_FILE</b></a>
+		</code></td>
+		<td class="value"><code><span class="php-num">1003</span></code></td>
+		<td class="description"><div>
+			<a href="#MYSQL_ATTR_READ_DEFAULT_FILE" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
+	<tr data-order="MYSQL_ATTR_READ_DEFAULT_GROUP" id="MYSQL_ATTR_READ_DEFAULT_GROUP">
+
+		<td class="attributes"><code>integer</code></td>
+		<td class="name"><code>
+				<a href="http://php.net/manual/class.pdo.php#pdo.constants.mysql-attr-read-default-group" title="Go to PHP documentation"><b>MYSQL_ATTR_READ_DEFAULT_GROUP</b></a>
+		</code></td>
+		<td class="value"><code><span class="php-num">1004</span></code></td>
+		<td class="description"><div>
+			<a href="#MYSQL_ATTR_READ_DEFAULT_GROUP" class="anchor">#</a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</div></td>
+	</tr>
 	<tr data-order="MYSQL_ATTR_COMPRESS" id="MYSQL_ATTR_COMPRESS">
 
 		<td class="attributes"><code>integer</code></td>
 		<td class="name"><code>
 				<a href="http://php.net/manual/class.pdo.php#pdo.constants.mysql-attr-compress" title="Go to PHP documentation"><b>MYSQL_ATTR_COMPRESS</b></a>
 		</code></td>
-		<td class="value"><code><span class="php-num">1003</span></code></td>
+		<td class="value"><code><span class="php-num">1006</span></code></td>
 		<td class="description"><div>
 			<a href="#MYSQL_ATTR_COMPRESS" class="anchor">#</a>
 
@@ -2116,7 +2177,7 @@
 		<td class="name"><code>
 				<a href="http://php.net/manual/class.pdo.php#pdo.constants.mysql-attr-direct-query" title="Go to PHP documentation"><b>MYSQL_ATTR_DIRECT_QUERY</b></a>
 		</code></td>
-		<td class="value"><code><span class="php-num">1004</span></code></td>
+		<td class="value"><code><span class="php-num">1007</span></code></td>
 		<td class="description"><div>
 			<a href="#MYSQL_ATTR_DIRECT_QUERY" class="anchor">#</a>
 
@@ -2136,7 +2197,7 @@
 		<td class="name"><code>
 				<a href="http://php.net/manual/class.pdo.php#pdo.constants.mysql-attr-found-rows" title="Go to PHP documentation"><b>MYSQL_ATTR_FOUND_ROWS</b></a>
 		</code></td>
-		<td class="value"><code><span class="php-num">1005</span></code></td>
+		<td class="value"><code><span class="php-num">1008</span></code></td>
 		<td class="description"><div>
 			<a href="#MYSQL_ATTR_FOUND_ROWS" class="anchor">#</a>
 
@@ -2156,7 +2217,7 @@
 		<td class="name"><code>
 				<a href="http://php.net/manual/class.pdo.php#pdo.constants.mysql-attr-ignore-space" title="Go to PHP documentation"><b>MYSQL_ATTR_IGNORE_SPACE</b></a>
 		</code></td>
-		<td class="value"><code><span class="php-num">1006</span></code></td>
+		<td class="value"><code><span class="php-num">1009</span></code></td>
 		<td class="description"><div>
 			<a href="#MYSQL_ATTR_IGNORE_SPACE" class="anchor">#</a>
 
@@ -2176,7 +2237,7 @@
 		<td class="name"><code>
 				<a href="http://php.net/manual/class.pdo.php#pdo.constants.mysql-attr-ssl-key" title="Go to PHP documentation"><b>MYSQL_ATTR_SSL_KEY</b></a>
 		</code></td>
-		<td class="value"><code><span class="php-num">1007</span></code></td>
+		<td class="value"><code><span class="php-num">1010</span></code></td>
 		<td class="description"><div>
 			<a href="#MYSQL_ATTR_SSL_KEY" class="anchor">#</a>
 
@@ -2196,7 +2257,7 @@
 		<td class="name"><code>
 				<a href="http://php.net/manual/class.pdo.php#pdo.constants.mysql-attr-ssl-cert" title="Go to PHP documentation"><b>MYSQL_ATTR_SSL_CERT</b></a>
 		</code></td>
-		<td class="value"><code><span class="php-num">1008</span></code></td>
+		<td class="value"><code><span class="php-num">1011</span></code></td>
 		<td class="description"><div>
 			<a href="#MYSQL_ATTR_SSL_CERT" class="anchor">#</a>
 
@@ -2216,7 +2277,7 @@
 		<td class="name"><code>
 				<a href="http://php.net/manual/class.pdo.php#pdo.constants.mysql-attr-ssl-ca" title="Go to PHP documentation"><b>MYSQL_ATTR_SSL_CA</b></a>
 		</code></td>
-		<td class="value"><code><span class="php-num">1009</span></code></td>
+		<td class="value"><code><span class="php-num">1012</span></code></td>
 		<td class="description"><div>
 			<a href="#MYSQL_ATTR_SSL_CA" class="anchor">#</a>
 
@@ -2236,7 +2297,7 @@
 		<td class="name"><code>
 				<a href="http://php.net/manual/class.pdo.php#pdo.constants.mysql-attr-ssl-capath" title="Go to PHP documentation"><b>MYSQL_ATTR_SSL_CAPATH</b></a>
 		</code></td>
-		<td class="value"><code><span class="php-num">1010</span></code></td>
+		<td class="value"><code><span class="php-num">1013</span></code></td>
 		<td class="description"><div>
 			<a href="#MYSQL_ATTR_SSL_CAPATH" class="anchor">#</a>
 
@@ -2256,129 +2317,9 @@
 		<td class="name"><code>
 				<a href="http://php.net/manual/class.pdo.php#pdo.constants.mysql-attr-ssl-cipher" title="Go to PHP documentation"><b>MYSQL_ATTR_SSL_CIPHER</b></a>
 		</code></td>
-		<td class="value"><code><span class="php-num">1011</span></code></td>
+		<td class="value"><code><span class="php-num">1014</span></code></td>
 		<td class="description"><div>
 			<a href="#MYSQL_ATTR_SSL_CIPHER" class="anchor">#</a>
-
-			<div class="description short">
-				
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-			</div>
-		</div></td>
-	</tr>
-	<tr data-order="PGSQL_ATTR_DISABLE_NATIVE_PREPARED_STATEMENT" id="PGSQL_ATTR_DISABLE_NATIVE_PREPARED_STATEMENT">
-
-		<td class="attributes"><code>integer</code></td>
-		<td class="name"><code>
-				<a href="http://php.net/manual/class.pdo.php#pdo.constants.pgsql-attr-disable-native-prepared-statement" title="Go to PHP documentation"><b>PGSQL_ATTR_DISABLE_NATIVE_PREPARED_STATEMENT</b></a>
-		</code></td>
-		<td class="value"><code><span class="php-num">1000</span></code></td>
-		<td class="description"><div>
-			<a href="#PGSQL_ATTR_DISABLE_NATIVE_PREPARED_STATEMENT" class="anchor">#</a>
-
-			<div class="description short">
-				
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-			</div>
-		</div></td>
-	</tr>
-	<tr data-order="PGSQL_TRANSACTION_IDLE" id="PGSQL_TRANSACTION_IDLE">
-
-		<td class="attributes"><code>integer</code></td>
-		<td class="name"><code>
-				<a href="http://php.net/manual/class.pdo.php#pdo.constants.pgsql-transaction-idle" title="Go to PHP documentation"><b>PGSQL_TRANSACTION_IDLE</b></a>
-		</code></td>
-		<td class="value"><code><span class="php-num">0</span></code></td>
-		<td class="description"><div>
-			<a href="#PGSQL_TRANSACTION_IDLE" class="anchor">#</a>
-
-			<div class="description short">
-				
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-			</div>
-		</div></td>
-	</tr>
-	<tr data-order="PGSQL_TRANSACTION_ACTIVE" id="PGSQL_TRANSACTION_ACTIVE">
-
-		<td class="attributes"><code>integer</code></td>
-		<td class="name"><code>
-				<a href="http://php.net/manual/class.pdo.php#pdo.constants.pgsql-transaction-active" title="Go to PHP documentation"><b>PGSQL_TRANSACTION_ACTIVE</b></a>
-		</code></td>
-		<td class="value"><code><span class="php-num">1</span></code></td>
-		<td class="description"><div>
-			<a href="#PGSQL_TRANSACTION_ACTIVE" class="anchor">#</a>
-
-			<div class="description short">
-				
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-			</div>
-		</div></td>
-	</tr>
-	<tr data-order="PGSQL_TRANSACTION_INTRANS" id="PGSQL_TRANSACTION_INTRANS">
-
-		<td class="attributes"><code>integer</code></td>
-		<td class="name"><code>
-				<a href="http://php.net/manual/class.pdo.php#pdo.constants.pgsql-transaction-intrans" title="Go to PHP documentation"><b>PGSQL_TRANSACTION_INTRANS</b></a>
-		</code></td>
-		<td class="value"><code><span class="php-num">2</span></code></td>
-		<td class="description"><div>
-			<a href="#PGSQL_TRANSACTION_INTRANS" class="anchor">#</a>
-
-			<div class="description short">
-				
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-			</div>
-		</div></td>
-	</tr>
-	<tr data-order="PGSQL_TRANSACTION_INERROR" id="PGSQL_TRANSACTION_INERROR">
-
-		<td class="attributes"><code>integer</code></td>
-		<td class="name"><code>
-				<a href="http://php.net/manual/class.pdo.php#pdo.constants.pgsql-transaction-inerror" title="Go to PHP documentation"><b>PGSQL_TRANSACTION_INERROR</b></a>
-		</code></td>
-		<td class="value"><code><span class="php-num">3</span></code></td>
-		<td class="description"><div>
-			<a href="#PGSQL_TRANSACTION_INERROR" class="anchor">#</a>
-
-			<div class="description short">
-				
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-			</div>
-		</div></td>
-	</tr>
-	<tr data-order="PGSQL_TRANSACTION_UNKNOWN" id="PGSQL_TRANSACTION_UNKNOWN">
-
-		<td class="attributes"><code>integer</code></td>
-		<td class="name"><code>
-				<a href="http://php.net/manual/class.pdo.php#pdo.constants.pgsql-transaction-unknown" title="Go to PHP documentation"><b>PGSQL_TRANSACTION_UNKNOWN</b></a>
-		</code></td>
-		<td class="value"><code><span class="php-num">4</span></code></td>
-		<td class="description"><div>
-			<a href="#PGSQL_TRANSACTION_UNKNOWN" class="anchor">#</a>
 
 			<div class="description short">
 				
@@ -2404,7 +2345,7 @@
 </div>
 
 	<div id="footer">
-		 API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+		tomkyle/DbFacade API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
 	</div>
 </div>
 </div>

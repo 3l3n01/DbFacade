@@ -3,7 +3,6 @@
 .htaccess
 vendor
 composer.lock
-apigen.neon
 
 
 
