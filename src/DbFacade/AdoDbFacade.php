@@ -3,15 +3,14 @@ namespace DbFacade;
 
 use \DbFacade\DatabaseFacadeInterface;
 use \DbFacade\DatabaseFacadeAbstract;
+use \DbFacade\AdoDbQueryResult;
 
 use \Exception;
 use \ADOConnection;
 
-use \DbFacade\AdoDbQueryResult;
-
 
 /**
- * ADOdb facade
+ * ADOdb facade concretion.
  *
  * @package Facades
  * @author  Carsten Witt <carsten.witt@gmail.com>
@@ -66,8 +65,10 @@ implements DatabaseFacadeInterface
 
 
 /**
- * Executes the given SQL string after preparing it.
- * For preparing, pass an associative array with named parameters as keys and values.
+ * Executes the given SQL string.
+ *
+ * The SQL is prepared first, then executed. For preparing, pass an associative
+ * array with named parameters as keys and values.
  *
  * @param  string $sql     SQL string, optionally with named parameters
  * @param  array  $context The named parameters and values, default empty
@@ -86,16 +87,19 @@ implements DatabaseFacadeInterface
     public function execute( $sql, $context = array() )
     {
         $stmt = $this->prepare($sql, $context);
+
         if ($result = $this->connection->Execute($stmt, $context)) {
             return $this->setResult(
                 new AdoDbQueryResult($result))->getResult();
         }
+
         throw new \Exception("Syntax Error: $sql, Error: " . $this->getErrorMsg());
     }
 
 
 /**
  * Returns the number of affected rows.
+ *
  * @return int
  * @uses   $result
  * @uses   ADOConnection::Affected_Rows()
@@ -107,6 +111,7 @@ implements DatabaseFacadeInterface
 
 /**
  * Returns the ID of the last inserted object.
+ *
  * @return int
  * @uses   $connection
  * @uses   ADOConnection::Insert_ID()
