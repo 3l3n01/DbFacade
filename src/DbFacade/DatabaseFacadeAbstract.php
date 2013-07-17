@@ -8,8 +8,9 @@ use \DbFacade\PdoFacade;
 use \UnexpectedValueException;
 use \InvalidArgumentException;
 
+
 /**
- * Abstract database wrapper
+ * Abstract database facade
  *
  * @package Facades
  * @author  Carsten Witt <carsten.witt@gmail.com>
@@ -42,15 +43,13 @@ implements DatabaseFacadeInterface
 
 
 /**
- * factory
- *
  * Returns a concrete DatabaseFacadeAbstract instance for the given database connection.
  * Currently, the following databases are supported:
  *
  * - PDO (PDO instance)
  * - ADODB (ADOConnection instance)
  *
- * @param  mixed $db Database driver
+ * @param  PDO|ADOConnection $db Database driver
  * @return DatabaseFacadeInterface
  *
  * @uses   AdoDbFacade
@@ -80,7 +79,9 @@ implements DatabaseFacadeInterface
 /**
  * Executes the given INSERT query and returns the last insert ID.
  *
- * @return int Last insert ID
+ * @return int
+ * @uses   getInsertId()
+ * @uses   execute()
  */
     public function create($sql, $context = array())
     {
@@ -88,11 +89,13 @@ implements DatabaseFacadeInterface
         return $this->getInsertId();
     }
 
+
 /**
  * Executes the given SELECT query and returns a concretion
  * of QueryResultAbstract that carries the results.
  *
  * @return QueryResultAbstract
+ * @uses   execute()
  */
     public function read($sql, $context = array())
     {
@@ -102,7 +105,10 @@ implements DatabaseFacadeInterface
 
 /**
  * Executes the given UPDATE query and returns the number of affected rows.
+ *
  * @return int
+ * @uses   affectedRows()
+ * @uses   execute()
  */
     public function update($sql, $context = array())
     {
@@ -113,7 +119,10 @@ implements DatabaseFacadeInterface
 
 /**
  * Executes the given DELETE query and returns the number of affected rows.
+ *
  * @return int
+ * @uses   affectedRows()
+ * @uses   execute()
  */
     public function delete($sql, $context = array())
     {
@@ -146,6 +155,7 @@ implements DatabaseFacadeInterface
 
 /**
  * Returns the number of affected rows.
+ *
  * @return int
  */
     abstract public function affectedRows();
@@ -153,15 +163,13 @@ implements DatabaseFacadeInterface
 
 /**
  * Returns the ID of the last inserted object.
+ *
  * @return int
  */
     abstract public function getInsertId();
 
 
-
-
 //  ============  Helpers  ========================
-
 
 
 /**
@@ -217,7 +225,6 @@ implements DatabaseFacadeInterface
 
 /**
  * Return information about the database connection as string.
- *
  *
  * @return string
  * @uses   $connection
